@@ -1,3 +1,9 @@
+img {
+  width: inherit  !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
 .blog-card{
   width: 85%;
   top: 50%;

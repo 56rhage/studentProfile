@@ -11,7 +11,7 @@ export default class Slideshow extends Component{
 			<h1 className="mainHeader">Principle Message</h1>
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-xs-4" id="principlePhoto"><img src="./img/MrNgPohOon.jpg" className="homeImg"/></div>
+					<div className="col-xs-4" id="principlePhoto"><img className="normal" src="./img/MrNgPohOon.jpg" className="homeImg"/></div>
                     <div className="col-xs-7">
                         <blockquote>
                             <p>

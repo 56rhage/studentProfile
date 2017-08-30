@@ -64,10 +64,10 @@ export default class ImageSlider extends Component {
     return (
       <div>
         <Slider {...settings}>
-          <div><img src="./img/Banner1.jpg" /></div>
-          <div><img src="./img/Banner2.jpg" /></div>
-          <div><img src="./img/Banner3.jpg" /></div>
-          <div><img src="./img/Banner4.jpg" /></div>
+          <div><img className="normal" src="./img/Banner1.jpg" /></div>
+          <div><img className="normal" src="./img/Banner2.jpg" /></div>
+          <div><img className="normal" src="./img/Banner3.jpg" /></div>
+          <div><img className="normal" src="./img/Banner4.jpg" /></div>
         </Slider>
 
         <div class="clearfix"></div>

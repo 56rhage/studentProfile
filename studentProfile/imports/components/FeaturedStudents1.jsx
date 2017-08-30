@@ -48,8 +48,8 @@ export default class FeaturedStudents extends Component{
                   clickable={true}
                   active={0}
               >
-                  <img src='image/path' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
-                  <img src='image/path' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
+                  <img className="normal" src='image/path' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
+                  <img className="normal" src='image/path' alt='title or description' data-action="http://andyyou.github.io/react-coverflow/"/>
               </Coverflow>
 
               <div id="container">
@@ -59,7 +59,7 @@ export default class FeaturedStudents extends Component{
 
                       <div className="item" style="width: 20%">
                   <div className="item-img img-circle">
-                  <img src="./img/profile.jpg" alt="poster" className="image" />
+                  <img className="normal" src="./img/profile.jpg" alt="poster" className="image" />
                   </div>
                   <div className="item-desc">
                   <p className="item-heading">Crystal Chiok</p>
@@ -70,7 +70,7 @@ export default class FeaturedStudents extends Component{
 
                       <div className="item">
                   <div className="item-img img-circle">
-                  <img src="./img/profile.jpg" alt="poster" className="image" />
+                  <img className="normal" src="./img/profile.jpg" alt="poster" className="image" />
                   </div>
                   <div className="item-desc">
                   <p className="item-heading">Improve Your Life With Salad</p>
@@ -83,7 +83,7 @@ export default class FeaturedStudents extends Component{
 
                       <div className="item">
                   <div className="item-img img-circle">
-                  <img src="./img/profile.jpg" alt="poster" className="image" />
+                  <img className="normal" src="./img/profile.jpg" alt="poster" className="image" />
                   </div>
                   <div className="item-desc">
                   <p className="item-heading">Ten Reasons Salad Is the Best</p>
@@ -98,7 +98,7 @@ export default class FeaturedStudents extends Component{
 
                       <div className="item">
                   <div className="item-img img-circle">
-                  <img src="./img/profile.jpg" alt="poster" className="image" />
+                  <img className="normal" src="./img/profile.jpg" alt="poster" className="image" />
                   </div>
                   <div className="item-desc">
                   <p className="item-heading">Lettuce, Why its Important</p>
@@ -121,22 +121,22 @@ export default class FeaturedStudents extends Component{
 
               {/*<div className="w3-row w3-border outer-div">
                     <div className="w3-quarter w3-container inner-div">
-                  <p className="img-circle"><img src="./img/profile.jpg" alt="poster" className="image" /></p>
+                  <p className="img-circle"><img className="normal" src="./img/profile.jpg" alt="poster" className="image" /></p>
                   <p className="projHead">Crystal Chiok</p>
                   <p>A short description here A short description here A short description here A short description here A short description here A short description here A short description here A short description here A short description here A short description here</p>
                     </div>
                     <div className="w3-quarter w3-container inner-div">
-                  <p className="img-circle"><img src="./img/profile.jpg" alt="poster" className="image" /></p>
+                  <p className="img-circle"><img className="normal" src="./img/profile.jpg" alt="poster" className="image" /></p>
                   <p className="projHead">Amanda Quek</p>
                   <p>A short description here</p>
                     </div>
                     <div className="w3-quarter w3-container inner-div">
-                  <p className="img-circle"><img src="./img/profile.jpg" alt="poster" className="image" /></p>
+                  <p className="img-circle"><img className="normal" src="./img/profile.jpg" alt="poster" className="image" /></p>
                   <p className="projHead">Lau Zi Quan</p>
                   <p>A short description here</p>
                     </div>
                     <div className="w3-quarter w3-container inner-div">
-                  <p className="img-circle"><img src="./img/profile.jpg" alt="poster" className="image" /></p>
+                  <p className="img-circle"><img className="normal" src="./img/profile.jpg" alt="poster" className="image" /></p>
                   <p className="projHead">Lee Boon Sing</p>
                   <p>A short description here</p>
                     </div>

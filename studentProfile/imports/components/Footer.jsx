@@ -8,7 +8,7 @@ export default class Footer extends Component{
 
 			<div className="footer-left">
 
-				<h3><img src="/img/ICT Logo.jpg" /></h3>
+				<h3><img className="normal" src="/img/ICT Logo.jpg" /></h3>
 
 				<p className="footer-links">
 					<a href="www.np.edu.sg">www.np.edu.sg</a>

@@ -136,7 +136,7 @@ export default class handleViewProject extends Component{
 
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-xs-5 projAlignRight"><img src={project} alt="poster" style={imageSize}/></div>
+                        <div className="col-xs-5 projAlignRight"><img className="normal" src={project} alt="poster" style={imageSize}/></div>
                         <div className="col-xs-5 projAlignLeft">
                             <h1>Details</h1>
                             Start Date: 28th August 2017
@@ -181,7 +181,7 @@ export default class handleViewProject extends Component{
                                 {/*{this.props.projectMembers.map((studentProject, index) => {
                                     return(*/}
                                         <div className="col-xs-3">
-                                            <img src={ profileImg } alt="image" style={ imageStyle } />
+                                            <img className="normal" src={ profileImg } alt="image" style={ imageStyle } />
                                             <h2>Amanda Quek</h2>
                                             <p>Project Manager</p>
                                         </div>

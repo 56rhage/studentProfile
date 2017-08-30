@@ -89,7 +89,7 @@ export default class FeaturedStudents extends Component{
                   <div className="wrapper">
                       <div className="card radius"> {/*shadowDepth1*/}
                           <div className="card__image border-tlr-radius" style={centerImage}>
-                              <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25346.png" alt="image" style={imageStyle} />
+                              <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25346.png" alt="image" style={imageStyle} />
                           </div>
                           <div className="card__content card__padding">
                               <article className="card__article">
@@ -109,7 +109,7 @@ export default class FeaturedStudents extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={centerImage}>
-                              <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25359.png" alt="image" style={imageStyle} />
+                              <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25359.png" alt="image" style={imageStyle} />
                           </div>
                           <div className="card__content card__padding">
                               <article className="card__article">
@@ -129,7 +129,7 @@ export default class FeaturedStudents extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={centerImage}>
-                              <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25645.png" alt="image" style={imageStyle} />
+                              <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25645.png" alt="image" style={imageStyle} />
                           </div>
                           <div className="card__content card__padding">
                               <article className="card__article">
@@ -149,7 +149,7 @@ export default class FeaturedStudents extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={centerImage}>
-                              <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25183.png" alt="image" style={imageStyle} />
+                              <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Student/25183.png" alt="image" style={imageStyle} />
                           </div>
                           <div className="card__content card__padding">
                               <article className="card__article">

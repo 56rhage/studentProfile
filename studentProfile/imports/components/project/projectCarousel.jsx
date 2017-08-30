@@ -65,7 +65,7 @@ export default class projectCarousel extends Component{
                                     //state: { ProjectID: studentProject.pid }
                                 }}>
                                     <div className="card__image border-tlr-radius" style={ centerImage }>
-                                        <img src={ studentProject.project_poster } alt="image" style={ imageStyle } />
+                                        <img className="max" className="max" src={ studentProject.project_poster } alt="image" style={ imageStyle } />
                                     </div>
 
                                     <div className="card__content card__padding">
@@ -95,7 +95,7 @@ export default class projectCarousel extends Component{
                                         //state: { ProjectID: studentProject.pid }
                                     }}>
                                         <div className="card__image border-tlr-radius" style={ centerImage }>
-                                            <img src={ studentProject.project_poster } alt="image" style={ imageStyle } />
+                                            <img className="normal" src={ studentProject.project_poster } alt="image" style={ imageStyle } />
                                         </div>
 
                                         <div className="card__content card__padding">
@@ -126,6 +126,7 @@ export default class projectCarousel extends Component{
         <div>
             <h1 className="mainHeader">Featured Projects</h1>
             {this.renderProjectSwiper(allProjects)}
+            <div className="clearfix"></div>
         </div>
         );
 

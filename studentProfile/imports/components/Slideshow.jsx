@@ -38,9 +38,9 @@ export default class Slideshow extends Component{
 		/*<div>
             <div className="rslides_container">
                 <ul className="rslides" id="slider2">
-                    <li><img src="./img/Banner1.jpg" alt="" /></li>
-                    <li><img src="./img/Banner2.jpg" alt="" /></li>
-                    <li><img src="./img/Banner3.jpg" alt="" /></li>
+                    <li><img className="normal" src="./img/Banner1.jpg" alt="" /></li>
+                    <li><img className="normal" src="./img/Banner2.jpg" alt="" /></li>
+                    <li><img className="normal" src="./img/Banner3.jpg" alt="" /></li>
                 </ul>
             </div>*/
 

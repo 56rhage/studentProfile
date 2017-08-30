@@ -68,9 +68,9 @@ export default class ListOfStudents extends Component{
                                   <div className="backgroundImage">
                                       <div className="centerImage">
                                           {displayAllStudents.student_photo == "" || displayAllStudents.student_photo == "null" || displayAllStudents.student_photo == null ?
-                                              <img src="../img/user.png" alt={displayAllStudents.student_name} className="imageStyle" />
+                                              <img className="normal" src="../img/user.png" alt={displayAllStudents.student_name} className="imageStyle" />
                                           :
-                                          <img src={displayAllStudents.student_photo} alt={displayAllStudents.student_name} className="imageStyle" />
+                                          <img className="normal" src={displayAllStudents.student_photo} alt={displayAllStudents.student_name} className="imageStyle" />
                                           }
                                       </div>
                                   </div>

@@ -6,6 +6,15 @@ import { withRouter, Link } from 'react-router-dom';
 import Swiper from 'react-id-swiper';
 import LinesEllipsis from 'react-lines-ellipsis';
 
+function trimText(str) {
+    if (str.length > 200) {
+        const maxLength = 182;
+        const trimmedString = str.substr(0, maxLength);
+        return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" "))).concat('...');
+    }
+    return str.concat('...');
+}
+
 export default class FeaturedStudents extends Component{
 
     renderSwiper(featuredStudents) {
@@ -35,7 +44,7 @@ export default class FeaturedStudents extends Component{
        };
 
        var centerImage = {
-           display: 'flex',
+         display: 'flex',
          alignItems: 'center',
          justifyContent: 'center',
        }
@@ -45,23 +54,25 @@ export default class FeaturedStudents extends Component{
                     {featuredStudents.map((studentProject, index) => {
                         var studentURL = "/ViewStudent/" + studentProject.student_id;
 
+                        console.log(">>", studentProject.student_name, studentProject.student_desc.length);
+
                         return(
                             <div className="wrapper" key={index}>
                                 <div className="card radius"> {/*shadowDepth1*/}
                                     <div className="card__image border-tlr-radius" style={centerImage}>
-                                        <img src={studentProject.student_photo} alt="image" style={imageStyle} />
+                                        <img className="normal" src={studentProject.student_photo} alt="image" style={imageStyle} />
                                     </div>
                                     <div className="card__content card__padding">
-                                        <article className="card__article">
+                                        
                                             <h2><a href={studentURL}>{studentProject.student_name}</a></h2>
                                             <LinesEllipsis
-                                                text={studentProject.student_desc}
+                                                text={trimText(studentProject.student_desc)}
                                                 maxLine='3'
-                                                ellipsis='...'
+                                                ellipsis=''
                                                 trimRight
                                                 basedOn='letters'
                                             />
-                                        </article>
+                                       
                                     </div>
                                 </div>
                             </div>

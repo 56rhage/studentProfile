@@ -59,7 +59,7 @@ export default class projectCarousel1 extends Component{
                 <div className="wrapper">
                     <div className="card radius"> {/*shadowDepth1*/}
                         <div className="card__image border-tlr-radius" className="centerImage">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-1.jpg" alt="image" className="imageStyleProject" />
+                            <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-1.jpg" alt="image" className="imageStyleProject" />
                         </div>
 
                         <div className="card__content card__padding">
@@ -74,7 +74,7 @@ export default class projectCarousel1 extends Component{
                 <div className="wrapper">
                     <div className="card radius shadowDepth1">
                         <div className="card__image border-tlr-radius" className="centerImage">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-1d55cd9b-8b4e-454e-8e56-523188ea96a3.png" alt="image" className="imageStyleProject" />
+                            <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-1d55cd9b-8b4e-454e-8e56-523188ea96a3.png" alt="image" className="imageStyleProject" />
                         </div>
 
                         <div className="card__content card__padding">
@@ -90,7 +90,7 @@ export default class projectCarousel1 extends Component{
                 <div className="wrapper">
                     <div className="card radius shadowDepth1">
                         <div className="card__image border-tlr-radius" className="centerImage">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-2.jpg" alt="image" className="imageStyleProject" />
+                            <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-2.jpg" alt="image" className="imageStyleProject" />
                         </div>
 
                         <div className="card__content card__padding">
@@ -106,7 +106,7 @@ export default class projectCarousel1 extends Component{
                 <div className="wrapper">
                     <div className="card radius shadowDepth1">
                         <div className="card__image border-tlr-radius" className="centerImage">
-                            <img src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-2c3158ab-1d25-4c91-af06-4618f6854798.png" alt="image" className="imageStyleProject" />
+                            <img className="normal" src="https://s3-ap-southeast-1.amazonaws.com/xpal/Project/poster-2c3158ab-1d25-4c91-af06-4618f6854798.png" alt="image" className="imageStyleProject" />
                         </div>
 
                         <div className="card__content card__padding">

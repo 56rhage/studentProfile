@@ -76,7 +76,7 @@ export default class ListOfProjects extends Component{
                                 }}>
                                     <div className="backgroundImage">
                                         <div className="centerImage">
-                                            <img src={ displayAllProjects.project_poster } alt="poster" style={image} />
+                                            <img className="normal" src={ displayAllProjects.project_poster } alt="poster" style={image} />
                                         </div>
                                     </div>
                                     <p className="projHead" id="change">{ displayAllProjects.project_name }</p>

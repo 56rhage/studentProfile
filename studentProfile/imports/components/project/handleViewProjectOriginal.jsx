@@ -123,7 +123,7 @@ export default class handleViewProject extends Component{
 
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-xs-5 projAlignRight"><img src={this.props.projectPoster} alt="poster" style={imageSize}/></div>
+                        <div className="col-xs-5 projAlignRight"><img className="normal" src={this.props.projectPoster} alt="poster" style={imageSize}/></div>
                         <div className="col-xs-5 projAlignLeft">
                             <h1>Details</h1>
                             Start Date: {this.props.projectStartDate}
@@ -173,7 +173,7 @@ export default class handleViewProject extends Component{
                                                 pathname: '/ViewStudent',
                                                 state: { StudentID: studentProject.student_id }
                                             }}>
-                                                <img src={ profileImg } alt="image" style={ imageStyle } />
+                                                <img className="normal" src={ profileImg } alt="image" style={ imageStyle } />
                                                 <h2>{studentProject.student_id}</h2>
                                                 <p>{studentProject.project_role}</p>
                                             </Link>

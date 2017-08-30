@@ -131,7 +131,7 @@ export default class handleViewProject extends Component{
 
                 <div className="row">
                     {/*750x500*/}
-                    <div className="col-md-7"><img className="img-fluid" src={this.props.projectPoster} alt="" style={ posterImage } /></div>
+                    <div className="col-md-7"><img className="normal" className="img-fluid" src={this.props.projectPoster} alt="" style={ posterImage } /></div>
                     <div className="col-md-4">
                         <h3 className="my-3">Project Description</h3>
                         <p style={content}>{this.props.projectDesc}</p>
@@ -179,7 +179,7 @@ export default class handleViewProject extends Component{
                                                 pathname: '/ViewStudent/' + studentProject.student_id,
                                                 //state: { StudentID: studentProject.student_id }
                                             }}>
-                                                <img src={ studentProject.student_photo } alt={ studentProject.student_name } style={ imageStyle } />
+                                                <img className="normal" src={ studentProject.student_photo } alt={ studentProject.student_name } style={ imageStyle } />
                                                 <h2>{studentProject.student_name}</h2>
                                                 <p>{studentProject.project_role}</p>
                                             </Link>

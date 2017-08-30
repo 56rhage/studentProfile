@@ -126,7 +126,7 @@ export default class About extends Component{
                         <br/><br/>
                         <h1 className="mobileDisplay mainHeader">School Map</h1>
                         <Element name="map" className="element" style={ firstElement }>
-                            <img src="../img/sch-map.png" style={imageSch}/>
+                            <img className="normal" src="../img/sch-map.png" style={imageSch}/>
                         </Element>
 
                         <hr/>
@@ -135,7 +135,7 @@ export default class About extends Component{
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-xs-4" style={justifyContent}>
-                                        <img src="../img/Jason.jpg" style={image}/>
+                                        <img className="normal" src="../img/Jason.jpg" style={image}/>
                                         <h2>Jason Shen</h2>
                                         <p>Dip IT Graduate
                                             <br/>
@@ -152,7 +152,7 @@ export default class About extends Component{
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-xs-4" style={justifyContent}>
-                                        <img src="../img/Yappy.jpg" style={image}/>
+                                        <img className="normal" src="../img/Yappy.jpg" style={image}/>
                                         <h2>Yappy Yap</h2>
                                         <p>Dip IT Graduate
                                             <br/>
@@ -171,7 +171,7 @@ export default class About extends Component{
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-xs-4" style={justifyContent}>
-                                        <img src="../img/Shuren.jpg" style={image}/>
+                                        <img className="normal" src="../img/Shuren.jpg" style={image}/>
                                         <h2>Tan Shu Ren</h2>
                                         <p>Dip IT Graduate
                                             <br/>
@@ -189,7 +189,7 @@ export default class About extends Component{
                             <div className="container-fluid">
                                 <div className="row">
                                     <div className="col-xs-4" style={ justifyContent }>
-                                        <img src="../img/Sam_Yong.jpg" style={image}/>
+                                        <img className="normal" src="../img/Sam_Yong.jpg" style={image}/>
                                         <h2>Sam Yong</h2>
                                         <p>Dip IT Graduate
                                             <br/>

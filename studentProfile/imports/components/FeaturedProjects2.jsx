@@ -76,7 +76,7 @@ export default class FeaturedProjects extends Component{
                   <div className="wrapper">
                       <div className="card radius"> {/*shadowDepth1*/}
                           <div className="card__image border-tlr-radius" className="centerImage">
-                              <img src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
                           </div>
 
                           <div className="card__content card__padding">
@@ -92,7 +92,7 @@ export default class FeaturedProjects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" className="centerImage">
-                              <img src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
                           </div>
 
                           <div className="card__content card__padding">
@@ -108,7 +108,7 @@ export default class FeaturedProjects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" className="centerImage">
-                              <img src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
                           </div>
 
                           <div className="card__content card__padding">
@@ -124,7 +124,7 @@ export default class FeaturedProjects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" className="centerImage">
-                              <img src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" className="imageStyleProject" />
                           </div>
 
                           <div className="card__content card__padding">

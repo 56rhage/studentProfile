@@ -60,7 +60,7 @@ export default class loadStudent extends Component{
                             <div className="wrapper"  key={index}>
                                 <div className="card radius"> {/*shadowDepth1*/}
                                     <div className="card__image border-tlr-radius" style={ centerImage }>
-                                        <img src={ project } alt="image" style={ imageStyle } />
+                                        <img className="normal" src={ project } alt="image" style={ imageStyle } />
                                     </div>
 
                                     <div className="card__content card__padding">

@@ -11,7 +11,7 @@ export default class NavComponent extends Component{
             <nav>
                 <div className="navWide">
                     <ul className="clearfix">
-                        <li><a href="/"><img id="main-img" src="/img/Ngee Ann Logo.jpg" /></a></li>
+                        <li><a href="/"><img className="normal" id="main-img" src="/img/Ngee Ann Logo.jpg" /></a></li>
                         <li><a href="/">Home</a></li>
                         <li><a href="/About">About</a></li>
                         <li><a href="/AllStudents">Student</a></li>
@@ -25,7 +25,7 @@ export default class NavComponent extends Component{
                     </ul>
                 </div>
                 <div className="navNarrow">
-                    <img src="/img/Ngee Ann Logo.jpg" />
+                    <img className="normal" src="/img/Ngee Ann Logo.jpg" />
                     <i className="fa fa-bars fa-2x" onClick={this.burgerToggle}></i>
                     <ul className="clearfix narrowLinks">
                         <li><a href="/" onClick={this.burgerToggle}>Home</a></li>

@@ -133,12 +133,12 @@ export default class handleViewProject extends Component{
 
                 { project.offsetWidth > project.offsetHeight ?
                   <div id="wrap">
-                    <img src={project} alt="poster" style={imageSizeLandscape}/>
+                    <img className="normal" src={project} alt="poster" style={imageSizeLandscape}/>
                   </div>
                 :
                 <div className="container-fluid">
           				<div className="row">
-          					<div className="col-xs-5 projAlignRight"><img src={project} alt="poster" style={imageSizePortrait}/></div>
+          					<div className="col-xs-5 projAlignRight"><img className="normal" src={project} alt="poster" style={imageSizePortrait}/></div>
                         <div className="col-xs-5 projAlignLeft">
                           <h1>Details</h1>
                           Start Date: 24th August 2017
@@ -192,7 +192,7 @@ export default class handleViewProject extends Component{
                           <div className="wrapper">
                               <div className="card radius"> {/*shadowDepth1*/}
                                   <div className="card__image border-tlr-radius" style={centerImage}>
-                                      <img src="./img/profile.jpg" alt="image" style={imageStyle} />
+                                      <img className="normal" src="./img/profile.jpg" alt="image" style={imageStyle} />
                                   </div>
 
                                   <div className="card__content card__padding">
@@ -208,7 +208,7 @@ export default class handleViewProject extends Component{
                           <div className="wrapper">
                               <div className="card radius shadowDepth1">
                                   <div className="card__image border-tlr-radius" style={centerImage}>
-                                      <img src="./img/profile.jpg" alt="image" style={imageStyle} />
+                                      <img className="normal" src="./img/profile.jpg" alt="image" style={imageStyle} />
                                   </div>
 
                                   <div className="card__content card__padding">
@@ -224,7 +224,7 @@ export default class handleViewProject extends Component{
                           <div className="wrapper">
                               <div className="card radius shadowDepth1">
                                   <div className="card__image border-tlr-radius" style={centerImage}>
-                                      <img src="./img/profile.jpg" alt="image" style={imageStyle} />
+                                      <img className="normal" src="./img/profile.jpg" alt="image" style={imageStyle} />
                                   </div>
 
                                   <div className="card__content card__padding">
@@ -240,7 +240,7 @@ export default class handleViewProject extends Component{
                           <div className="wrapper">
                               <div className="card radius shadowDepth1">
                                   <div className="card__image border-tlr-radius" style={centerImage}>
-                                      <img src="./img/profile.jpg" alt="image" style={imageStyle} />
+                                      <img className="normal" src="./img/profile.jpg" alt="image" style={imageStyle} />
                                   </div>
 
                                   <div className="card__content card__padding">

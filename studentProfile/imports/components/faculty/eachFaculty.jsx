@@ -34,7 +34,7 @@ export default class eachFaculty extends Component{
                                 pathname: '/ViewProject',
                                 state: { ProjectID: 'b46eebe3-53f4-4d7e-adaf-f7459dffc230' }
                             }}>
-                                <p><img src={poster} alt="poster" className="image" /></p>
+                                <p><img className="normal" src={poster} alt="poster" className="image" /></p>
                                 <p className="projHead">{this.props.projectName[this.state.count]}</p>
                                 <p>{this.props.projectDesc[this.state.count]}</p>
                             </Link>

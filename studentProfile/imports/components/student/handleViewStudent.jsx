@@ -108,9 +108,9 @@ export default class handleViewStudent extends Component{
                         <div className="col-xs-2">
                             <div className="img-circle">
                                 {this.props.photo == "" || this.props.photo == "null" || this.props.photo == null ?
-                                    <img src="../img/user.png" alt="poster" className="imageStyle" />
+                                    <img className="normal" src="../img/user.png" alt="poster" className="imageStyle" />
                                 :
-                                <img src={this.props.photo} alt="poster" className="image" />
+                                <img className="normal" src={this.props.photo} alt="poster" className="image" />
                                 }
                             </div>
                         </div>
@@ -180,7 +180,7 @@ export default class handleViewStudent extends Component{
                     <hr/>
                     <table style={ tableCenter }>
                         <tr>
-                            <td style={ tableWidthImg }><img src="./../img/curriculum.png" style={ icon }/></td>
+                            <td style={ tableWidthImg }><img className="normal" src="./../img/curriculum.png" style={ icon }/></td>
                             <td style={ tableWidth }>
                                 <h1>Resume</h1>
                                 <h3 style={ subText }>My Academic Qualification</h3>
@@ -279,7 +279,7 @@ export default class handleViewStudent extends Component{
                     <hr/>
                     <table style={ tableCenter }>
                         <tr>
-                            <td style={ tableWidthImg }><img src="./../img/briefcase.png" style={ icon }/></td>
+                            <td style={ tableWidthImg }><img className="normal" src="./../img/briefcase.png" style={ icon }/></td>
                             <td style={ tableWidth }>
                                 <h1>Portfolio</h1>
                                 <h3 style={ subText }>Some of My Works</h3>

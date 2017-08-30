@@ -32,7 +32,7 @@ export default class FeaturedProjects extends Component{
         const { projects } = this.props;
 
     return (
-        <div id="wrap">
+        <div id="wrap" style={{overflowX: 'hidden' }}>
             <div id="header">
                 {/*<h1 className="mainHeader">Projects</h1>*/}
                 <div className="w3-container">

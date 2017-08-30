@@ -18,7 +18,7 @@ export default class Slideshow extends Component{
       </div>
               <div className="w3-row w3-border">
           <div className="w3-quarter w3-container">
-                      <p><img src={ project1 } alt="poster" className="image" /></p>
+                      <p><img className="normal" src={ project1 } alt="poster" className="image" /></p>
                       <p className="projHead">Underneath</p>
                       <p>A short description here</p>
                       <p className="viewProj">
@@ -26,17 +26,17 @@ export default class Slideshow extends Component{
               </p>
                   </div>
           <div className="w3-quarter w3-container">
-                      <p><img src={ project1 } alt="poster" className="image" /></p>
+                      <p><img className="normal" src={ project1 } alt="poster" className="image" /></p>
                       <p className="projHead">Underneath</p>
                       <p>A short description here</p>
                   </div>
           <div className="w3-quarter w3-container">
-                      <p><img src={ project1 } alt="poster" className="image" /></p>
+                      <p><img className="normal" src={ project1 } alt="poster" className="image" /></p>
                       <p className="projHead">Underneath</p>
                       <p>A short description here</p>
                   </div>
           <div className="w3-quarter w3-container">
-                      <p><img src={ project1 } alt="poster" className="image" /></p>
+                      <p><img className="normal" src={ project1 } alt="poster" className="image" /></p>
                       <p className="projHead">Underneath</p>
                       <p>A short description here</p>
                   </div>

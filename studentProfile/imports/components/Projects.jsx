@@ -45,7 +45,7 @@ export default class Projects extends Component{
                   <div className="wrapper">
                       <div className="card radius"> {/*shadowDepth1*/}
                           <div className="card__image border-tlr-radius" style={ centerImage }>
-                              <img src="./img/Project1.jpg" alt="image" style={ imageStyle } />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" style={ imageStyle } />
                           </div>
 
                           <div className="card__content card__padding">
@@ -61,7 +61,7 @@ export default class Projects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={ centerImage }>
-                              <img src="./img/Project1.jpg" alt="image" style={ imageStyle } />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" style={ imageStyle } />
                           </div>
 
                           <div className="card__content card__padding">
@@ -77,7 +77,7 @@ export default class Projects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={ centerImage }>
-                              <img src="./img/Project1.jpg" alt="image" style={ imageStyle } />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" style={ imageStyle } />
                           </div>
 
                           <div className="card__content card__padding">
@@ -93,7 +93,7 @@ export default class Projects extends Component{
                   <div className="wrapper">
                       <div className="card radius shadowDepth1">
                           <div className="card__image border-tlr-radius" style={ centerImage }>
-                              <img src="./img/Project1.jpg" alt="image" style={ imageStyle } />
+                              <img className="normal" src="./img/Project1.jpg" alt="image" style={ imageStyle } />
                           </div>
 
                           <div className="card__content card__padding">

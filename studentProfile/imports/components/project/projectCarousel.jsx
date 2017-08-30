@@ -22,7 +22,7 @@ export default class projectCarousel extends Component{
     });
   }
 
-  render(){
+  renderProjectSwiper(allProjects) {
       const params = {
           pagination: '.swiper-pagination',
           effect: 'coverflow',
@@ -52,11 +52,8 @@ export default class projectCarousel extends Component{
       alignItems: 'center',
       justifyContent: 'center',
     }
-
-    return (
-        <div>
-            <h1 className="mainHeader">Featured Projects</h1>
-
+      if (allProjects.length > 0) {
+          return (
             <Swiper {...params}>
                 {this.props.allProjects.map((studentProject, index) => {
                     return(
@@ -112,10 +109,23 @@ export default class projectCarousel extends Component{
                                 </div>
                             </div>
                         )
-                    }
-                    )
-                }
-            </Swiper>
+                    })}
+            </Swiper>            
+          );
+
+      }
+      return null;
+  }
+
+  render(){
+
+
+    const { allProjects } = this.props;
+
+    return (
+        <div>
+            <h1 className="mainHeader">Featured Projects</h1>
+            {this.renderProjectSwiper(allProjects)}
         </div>
         );
 

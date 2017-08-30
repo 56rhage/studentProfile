@@ -24,15 +24,57 @@ export const logPageView = () => {
   ReactGA.pageview(window.location.pathname);
 }
 
+  const students = [];
+
 export default class Home extends Component{
-    componentDidMount(){
+    constructor(){
+      super();
+      this.state = {
+        featuredStudents: [],
+        featuredProjects: []
+      }
+    }
+
+    async componentWillMount(){
         initGA();
         logPageView();
+        /*proxyUrl = 'https://cors-anywhere.herokuapp.com/';*/
+        /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
+        const apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetAllFeatured';
+        options = {
+            method: 'GET',
+        };
+
+      try {
+          const response = await fetch(apiURL, options);
+
+          // response message
+          const data = await response.json();
+
+          const status = response.status;
+          if (status === 200){
+
+            // response code
+            const featuredProjects = data.featured_projects;
+            const featuredStudents = data.feautured_students;
+
+            this.setState({
+              featuredProjects,
+              featuredStudents
+            });
+          } else {
+              throw new Error(response.statusText);
+          }
+      } catch(error){
+          alert(error);
       }
+    }
+
 
   render() {
 	var profileImg = './img/profile.jpg';
 	var profileImg1 = './img/Project1.jpg';
+  const { featuredProjects, featuredStudents } = this.state;
 
     return (
       <div>
@@ -43,9 +85,9 @@ export default class Home extends Component{
           <br/>
           <PrincipleMsg />
           <br/>
-          <FeaturedStudents />
+          <FeaturedStudents students={featuredStudents}/>
           <br/>
-          <FeaturedProjects />
+          <FeaturedProjects projects={featuredProjects}/>
           <br/>
           <Footer />
       </div>

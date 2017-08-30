@@ -80,33 +80,16 @@ export default class ListOfStudents extends Component{
           padding: '5px 13px',
       }
 
-      var paddingButton = {
-          padding: '1%',
-          display: 'inline',
-      }
-
     return(
       <div>
           <div style={filter}>
               <form>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="" style={eachButton}>All</button>
-                  </div>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Animation & 3D Arts" style={eachButton}>Diploma in Animation & 3D Arts</button>
-                  </div>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Financial Informatics" style={eachButton}>Diploma in Financial Informatics</button>
-                  </div>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Game Design" style={eachButton}>Diploma in Game Design</button>
-                  </div>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Inforamtion Technology" style={eachButton}>Diploma in Inforamtion Technology</button>
-                  </div>
-                  <div style={paddingButton}>
-                      <button type="button" onClick={this.searchHandler} class="focus" value="Arts Business Management" style={eachButton}>Arts Business Management</button>
-                  </div>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="" style={eachButton}>All</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Animation & 3D Arts" style={eachButton}>Diploma in Animation & 3D Arts</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Financial Informatics" style={eachButton}>Diploma in Financial Informatics</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Game Design" style={eachButton}>Diploma in Game Design</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Inforamtion Technology" style={eachButton}>Diploma in Inforamtion Technology</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Arts Business Management" style={eachButton}>Arts Business Management</button>
               </form>
           </div>
 
@@ -157,23 +140,3 @@ export default class ListOfStudents extends Component{
     );
   }
 }
-
-ListOfStudents.propTypes = {
-    name: PropTypes.string.isRequired,
-    studentDesc: PropTypes.string,
-    courseName: PropTypes.string,
-    email: PropTypes.string.isRequired,
-    photo: PropTypes.string.isRequired,
-    linkedin: PropTypes.string.isRequired,
-    personalProfile: PropTypes.string.isRequired,
-    twitter: PropTypes.string.isRequired,
-    git: PropTypes.string.isRequired,
-    projects: PropTypes.array.isRequired,
-    studentSkills: PropTypes.array.isRequired,
-    hobbies: PropTypes.string.isRequired,
-    eduLvl: PropTypes.array.isRequired,
-    workExp: PropTypes.array.isRequired,
-    cert: PropTypes.array.isRequired,
-    cca: PropTypes.array.isRequired,
-    achievements: PropTypes.array.isRequired,
-};

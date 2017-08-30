@@ -10,6 +10,17 @@ img.max {
   height: auto !important;
 }
 
+img.logo {
+  width: inherit  !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+@media screen and (min-width:280px) and (max-width:780px) {
+  img.logo {
+    max-width: 30% !important;
+  }
+}
 
 .blog-card{
   width: 85%;

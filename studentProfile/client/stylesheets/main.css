@@ -10,6 +10,298 @@ img.max {
   height: auto !important;
 }
 
+.custom-avatar {
+	width: 200px !important;
+	height: 200px !important;
+}
+.resume-field {
+
+}
+
+.avatar-responsive {
+	padding-top: 20px;
+}
+
+.starter {
+	font-size: 20px;
+	margin-right: 8px;
+	color: pink;
+}
+
+.resume-span {
+	font-size: 20px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.resume-position {
+	font-size: 16px;
+	text-transform: capitalize;
+	margin-left: 35px;
+	padding: 5px;
+}
+
+.resume-header {
+	padding: 10px;
+    margin: 25px;
+}
+
+.studentname-resume {
+	font-size: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.resume-desc {
+	font-size: 14px;
+}
+
+.res-item-header {
+	display: flex;
+    flex-direction: column;
+}
+
+.resume-container {
+	max-width: 60rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1.5rem;
+    background: #fff;
+    -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+     box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6); 
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    background: -o-linear-gradient(left top, #333, #222);
+    background: -moz-linear-gradient(left top, #333, #222);
+    background: linear-gradient(left top, #333, #222);
+    height: auto;
+	flex-direction: column;
+}
+
+.student-card {
+	margin-top: 20px;
+	font-weight: 600;
+	word-spacing: 2px;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+    -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    position: relative;
+    z-index: 2;
+	background: #f2f2f2;
+}
+
+.student-skills-holder {
+	margin-top: 30px;
+}
+.skills-cont {
+
+}
+
+.student-skills-holder h1 {
+	font-size: 20px !important;
+    text-transform: uppercase;
+    color: #fff;
+	text-align: left !important;
+}
+
+.student-skill-card {
+    width: 25%;
+    height: 100px;
+    line-height: 100px;
+    border: 1px solid white;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+}
+
+.student-card.nxs {
+	padding: 0.6rem !important;
+	padding: 0.6rem !important;
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+
+.student-header-container {
+	display: flex;
+	justify-content: flex-start;
+	line-height: 100%;
+}
+
+.student-header-container i {
+	padding-top: 8px;
+	padding-right: 10px;
+}
+
+.student-card.nxs h1 {
+	text-align: left !important;
+}
+
+.student-card.nxs p {
+	font-weight: 900 !important;
+    text-transform: uppercase !important;
+}
+
+.student-header-text {
+	text-transform: uppercase;
+    color: #4b3d62;
+	font-size: 20px;
+	text-align: left !important;
+}
+
+.custom-loader {
+	line-height: 80vh;
+    color: white;
+}
+
+.action-btns{
+	display: flex;
+    justify-content: space-around;
+    width: 100%;
+	margin-top: 40px;
+}
+
+.y-btn {
+	background-color: rgba(255, 255, 255, 1);
+    border: solid rgba(189, 21, 21, 1) 0px;
+    cursor: pointer !important;
+    height: 50px;
+    width: 230px;
+    transition: color 0.4s ease 0s;
+    display: inline-block;
+    margin: calc(-1 * 0px) 0px 0;
+    position: relative;
+    white-space: nowrap;
+	font-size: 15px;
+    line-height: 50px;
+    text-align: center;
+	font-weight: 200;
+}
+
+.portfolio-card {
+	max-width: 60rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #fff;
+    -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    position: relative;
+    z-index: 2;
+	display: flex;
+    justify-content: space-around;
+	flex-wrap: wrap;
+	background: -webkit-linear-gradient(left top, #333, #222); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(left top, #333, #222); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(left top, #333, #222); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(left top, #333, #222);
+	height: auto;
+}
+
+.custom-social {
+	display: flex;
+    justify-content: center;
+}
+
+.student-contact-items {
+	display: flex;
+	flex-direction: column;
+}
+
+.custom-social a {
+	background: #f2f2f2;
+	border-radius: 50%;
+	border: 1px solid;
+    width: 35px;
+    height: 35px;
+	display: flex;
+	justify-content: center;
+	margin-right: 5px;
+    margin-left: 5px;
+}
+
+.custom-social a i {
+	line-height: 35px;
+}
+
+
+.custom-social a:hover {
+	background: #4b3d62;
+	cursor: pointer;
+}
+
+.student-info-custom {
+ width: 50%;
+}
+
+.student-about-info {
+
+}
+
+.custom-email {
+	display: flex;
+    justify-content: center;
+	margin-top: 20px;
+}
+
+.custom-email span {
+	font-size: 20px;
+	color: cornflowerblue;
+    font-weight: 800;
+	cursor: pointer;
+}
+
+.custom-email span:hover {
+	color: #fff;
+}
+
+.student-intro {
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;
+	flex-wrap: wrap;*/
+}
+
+.alter-wrap{
+	padding-bottom: 0 !important;
+}
+
+.student-nav {
+	border-top: 1px solid;
+}
+
+.student-nav #header {
+	display: flex;
+	justify-content: space-around;
+	padding: 0 !important;
+}
+
+.student-icon-card {
+	height: 150px;
+	border: 1px solid;
+	width: 25%;
+	display: flex;
+    justify-content: center;
+}
+
+.student-icon-card img {
+	width: 100% !important;
+}
+
+
 
 .blog-card{
   width: 85%;
@@ -59,6 +351,13 @@ img.max {
 	.mobileDisplay{
 		display: inline-block;
 		text-align: center;
+	}
+	.student-info-custom {
+		width: 100%;
+	}
+	.y-btn {
+		width: 120px;
+		margin-top: 40px;
 	}
 }
 /*About Page*/
@@ -476,10 +775,20 @@ div#headerStudent {
 h1.mainHeader {
 	text-align: center;
 }
+
 h1.studentName {
 	font-size: 44px;
 	text-transform: uppercase;;
 	text-align: center;
+}
+
+.studentname-custom {
+    margin-left: 20px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    line-height: 80px;
+    margin-right: 20px !important;
+	color: #fff;
 }
 p.mainLink {
 	padding: 5px;

@@ -44,78 +44,87 @@ export default class ViewStudent extends Component{
           cert: [],
           cca: [],
           achievements: [],
+          currentState: 'ready'
       };
     }
 
     componentDidMount(){
         initGA(); /*Analytics*/
         logPageView(); /*Analytics*/
+        if (this.state.currentState === 'isLoading') {
+            this.forceUpdate();
+        }
       }
 
-    async componentDidMount(){
-        proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
-        var studentID = this.state.studentID;
-        apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetStudentData?student_id=' + studentID;
-        options = {
-            method: 'GET',
-        };
+    async componentWillMount(){
+        if (this.state.currentState !== 'isLoading') {
+                proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
+                var studentID = this.state.studentID;
+                apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetStudentData?student_id=' + studentID;
+                options = {
+                    method: 'GET',
+                };
 
-      try{
-          /*var response = await fetch(proxyUrl + apiURL, options);*/
-          var response = await fetch(proxyUrl + apiURL, options);
+            try{
+                /*var response = await fetch(proxyUrl + apiURL, options);*/
+                var response = await fetch(proxyUrl + apiURL, options);
 
-          // response message
-          var data = await response.json();
-          console.log(data);
-          var status = response.status;
+                // response message
+                var data = await response.json();
+                console.log(data);
+                var status = response.status;
 
-          if (status == 200){
-          // response code
-          var name = data.student.student_name;
-          var studentDesc = data.student.student_desc;
-          var courseName = data.student.course_id + ', ' + data.student.course_name;
-          var email = data.student.email;
-          var photo = data.student.student_photo;
-          var linkedin = data.student.linkedin_url;
-          var personalProfile = data.student.personal_portfolio_url;
-          var twitter = data.student.twitter_url;
-          var git = data.student.git_url;
-          var projects = data.student.project_list;
-          var studentSkills = data.student.student_skills;
-          var hobbies = data.student.hobbies;
-          var eduLvl = data.student.student_education_level;
-          var workExp = data.student.student_work_experience;
-          var cert = data.student.certification;
-          var cca = data.student.cca_community_service;
-          var achievements = data.student.achievement_award;
+                if (status == 200){
+                // response code
+                var name = data.student.student_name;
+                var studentDesc = data.student.student_desc;
+                var courseName = data.student.course_id + ', ' + data.student.course_name;
+                var email = data.student.email;
+                var photo = data.student.student_photo;
+                var linkedin = data.student.linkedin_url;
+                var personalProfile = data.student.personal_portfolio_url;
+                var twitter = data.student.twitter_url;
+                var git = data.student.git_url;
+                var projects = data.student.project_list;
+                var studentSkills = data.student.student_skills;
+                var hobbies = data.student.hobbies;
+                var eduLvl = data.student.student_education_level;
+                var workExp = data.student.student_work_experience;
+                var cert = data.student.certification;
+                var cca = data.student.cca_community_service;
+                var achievements = data.student.achievement_award;
 
-          this.setState({
-            name: name,
-            studentDesc: studentDesc,
-            courseName: courseName,
-            email: email,
-            photo: photo,
-            linkedin: linkedin,
-            personalProfile: personalProfile,
-            twitter: twitter,
-            git: git,
-            projects: projects,
-            studentSkills: studentSkills,
-            hobbies: hobbies,
-            eduLvl: eduLvl,
-            workExp: workExp,
-            cert: cert,
-            cca: cca,
-            achievements: achievements,
-          });
-          
-          }else{
-              //Handle other than success
-          }
-      }catch(error){
-          alert(error);
-      }
+                this.setState({
+                    name: name,
+                    studentDesc: studentDesc,
+                    courseName: courseName,
+                    email: email,
+                    photo: photo,
+                    linkedin: linkedin,
+                    personalProfile: personalProfile,
+                    twitter: twitter,
+                    git: git,
+                    projects: projects,
+                    studentSkills: studentSkills,
+                    hobbies: hobbies,
+                    eduLvl: eduLvl,
+                    workExp: workExp,
+                    cert: cert,
+                    cca: cca,
+                    achievements: achievements,
+                    currentState: 'Loaded'
+                });
+                
+                }else{
+                    //Handle other than success
+                }
+            } catch(error) {
+                this.setState({
+                    currentState: 'isLoading'
+                });
+            }
+        }
     }
 
   render() {
@@ -142,7 +151,6 @@ export default class ViewStudent extends Component{
                 cca={this.state.cca}
                 achievements={this.state.achievements}
             />
-
         </div>
     );
   }

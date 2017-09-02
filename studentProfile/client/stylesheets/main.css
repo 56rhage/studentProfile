@@ -81,6 +81,25 @@ img.max {
     background: linear-gradient(left top, #333, #222);
     height: auto;
 	flex-direction: column;
+	position: relative;
+}
+
+.dipper-ext {
+	position: relative;
+    /*top: 0;*/
+    height: 100%;
+    /*overflow: hidden;*/
+    z-index: 100;
+}
+
+#resume canvas {
+	background-color: white !important;
+}
+
+#profile canvas {
+	background: -o-linear-gradient(left top, #333, #222) !important;
+    background: -moz-linear-gradient(left top, #333, #222) !important;
+    background: linear-gradient(left top, #333, #222) !important;
 }
 
 .student-card {
@@ -245,6 +264,7 @@ img.max {
 
 .student-info-custom {
  width: 50%;
+ z-index: 100;
 }
 
 .student-about-info {
@@ -302,6 +322,17 @@ img.max {
 }
 
 
+img.logo {
+  width: inherit  !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+@media screen and (min-width:280px) and (max-width:780px) {
+  img.logo {
+    max-width: 30% !important;
+  }
+}
 
 .blog-card{
   width: 85%;

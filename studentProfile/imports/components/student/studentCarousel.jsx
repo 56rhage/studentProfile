@@ -17,7 +17,7 @@ function trimText(str) {
 }
 
 
-export default class projectCarousel extends Component{
+export default class studentCarousel extends Component{
 
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ export default class projectCarousel extends Component{
     });
   }
 
-  renderProjectSwiper(allProjects) {
+  renderProjectSwiper(allStudents) {
       const params = {
           pagination: '.swiper-pagination',
           effect: 'coverflow',
@@ -54,38 +54,41 @@ export default class projectCarousel extends Component{
           }
         }
 
-    var imageStyle = {
-        width: '100%',
-        maxWidth: '280px',
-        maxHeight: '395px',
-    }
+        var imageStyle = {
+           width: 200,
+           height: 200,
+           borderRadius: '50%',
+        };
 
-    var centerImage = {
-        display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }
-      if (allProjects.length > 0) {
+        var centerImage = {
+         display: 'flex',
+         alignItems: 'center',
+         justifyContent: 'center',
+        }
+        
+      if (allStudents.length > 0) {
           return (
             <Swiper {...params}>
-                {this.props.allProjects.map((studentProject, index) => {
+                {this.props.allStudents.map((studentProject, index) => {
+                    var studentURL = "/ViewStudent/" + studentProject.student_id;
+
                     return(
                         <div className="wrapper" key={index}>
                             <div className="card radius"> {/*shadowDepth1*/}
                                 <Link to ={{
                                     //pathname: '/ViewProject',
-                                    pathname: '/ViewProject/' + studentProject.pid,
+                                    pathname: '/ViewStudent/' + studentProject.student_id,
                                     //state: { ProjectID: studentProject.pid }
                                 }}>
                                     <div className="card__image border-tlr-radius" style={ centerImage }>
-                                        <img src={ studentProject.project_poster } alt="image" style={ imageStyle } />
+                                        <img className="normal" src={studentProject.student_photo} alt="image" style={imageStyle} />
                                     </div>
 
                                     <div className="card__content card__padding">
-                                        <h2><a href="#">{ studentProject.project_name }</a></h2>
+                                        <h2><a href={studentURL}>{ studentProject.student_name }</a></h2>
 
                                         <LinesEllipsis
-                                            text={ trimText(studentProject.project_desc) }
+                                            text={ trimText(studentProject.student_desc) }
                                             maxLine='3'
                                             ellipsis=''
                                             trimRight
@@ -102,25 +105,27 @@ export default class projectCarousel extends Component{
                 )}
 
                 {this.state.count < 2 &&
-                    this.props.allProjects.map((studentProject, index) => {
+                    this.props.allStudents.map((studentProject, index) => {
+                        var studentURL = "/ViewStudent/" + studentProject.student_id;
+
                         return(
                             <div className="wrapper" key={index}>
                                 <div className="card radius"> {/*shadowDepth1*/}
                                     <Link to ={{
                                         //pathname: '/ViewProject',
-                                        pathname: '/ViewProject/' + studentProject.pid,
+                                        pathname: '/ViewStudent/' + studentProject.student_id,
                                         //state: { ProjectID: studentProject.pid }
                                     }}>
                                         <div className="card__image border-tlr-radius" style={ centerImage }>
-                                            <img className="normal" src={ studentProject.project_poster } alt="image" style={ imageStyle } />
+                                            <img className="normal" src={studentProject.student_photo} alt="image" style={imageStyle} />
                                         </div>
 
                                         <div className="card__content card__padding">
                                             <article className="card__article">
-                                                <h2><a href="#">{ studentProject.project_name }</a></h2>
+                                                <h2><a href="#">{ studentProject.student_name }</a></h2>
 
                                                 <LinesEllipsis
-                                                    text={ trimText(studentProject.project_desc) }
+                                                    text={trimText(studentProject.student_desc)}
                                                     maxLine='3'
                                                     ellipsis=''
                                                     trimRight
@@ -143,12 +148,12 @@ export default class projectCarousel extends Component{
   render(){
 
 
-    const { allProjects } = this.props;
+    const { allStudents } = this.props;
 
     return (
         <div>
-            <h1 className="mainHeader">Featured Projects</h1>
-            {this.renderProjectSwiper(allProjects)}
+            <h1 className="mainHeader">Featured Students</h1>
+            {this.renderProjectSwiper(allStudents)}
             <div className="clearfix"></div>
         </div>
         );
@@ -157,6 +162,6 @@ export default class projectCarousel extends Component{
 
 }
 
-projectCarousel.propTypes = {
-    allProjects: PropTypes.array.isRequired,
+studentCarousel.propTypes = {
+    allStudents: PropTypes.array.isRequired,
 };

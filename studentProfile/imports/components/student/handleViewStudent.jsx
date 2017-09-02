@@ -17,6 +17,7 @@ import Swiper from 'react-id-swiper';
 import { Line, Circle } from 'rc-progress';
 import Scrollchor from 'react-scrollchor';
 
+
 const parseDate = (dateString) => {
     const tokenizedDate = dateString.split('-');
     const month = Number(tokenizedDate[0]);
@@ -216,7 +217,7 @@ export default class handleViewStudent extends Component{
                             :  "" }
                         </div>
                     </div>  
-                </div>                                           
+                </div>
             </div>
         )
     }
@@ -225,7 +226,7 @@ export default class handleViewStudent extends Component{
         const anim = { offset: 0, duration: 400 };
         if (this.props.name) {
             return (
-                <div className="portfolio-card">
+                <div id="profile" className="portfolio-card">
                     <div className="student-info-custom">
                         <div className="student-intro">
                             <div className="avatar-responsive">
@@ -303,6 +304,7 @@ export default class handleViewStudent extends Component{
                             </div>
                         </div>
                     </div>
+                    
                 </div>         
             );
         }

@@ -47,7 +47,7 @@ export default class FeaturedProjects extends Component{
                 </div>
                 {/*This is to ensure that the div height covers all content*/}
                 <div className="clearfix"></div>
-                <p className="mainLink"><a href="/AllProjects">View all students >></a></p>
+                <p className="mainLink"><a href="/AllProjects">View all projects >></a></p>
             </div>
         </div>
     );

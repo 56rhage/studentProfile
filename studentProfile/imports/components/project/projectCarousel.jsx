@@ -143,11 +143,15 @@ export default class projectCarousel extends Component{
   render(){
 
 
-    const { allProjects } = this.props;
+    const { allProjects, header } = this.props;
 
     return (
         <div>
-            <h1 className="mainHeader">Featured Projects</h1>
+            {header ?
+                header 
+                :
+                <h1 className="mainHeader">Featured Projects</h1>
+            }
             {this.renderProjectSwiper(allProjects)}
             <div className="clearfix"></div>
         </div>
@@ -159,4 +163,5 @@ export default class projectCarousel extends Component{
 
 projectCarousel.propTypes = {
     allProjects: PropTypes.array.isRequired,
+    header: PropTypes.node
 };

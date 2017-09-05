@@ -111,113 +111,128 @@ export default class handleViewStudent extends Component{
 
     renderResume() {
         const { workExp, eduLvl, cert, cca, achievements } = this.props;
-        return (
-            <div id="resume" className="resume-container">
-                <div><span className="studentName studentname-resume">{this.props.name}</span></div>
-                <div className="resume-cont">
-                    <div className="resume-field">
-                        <div className="resume-header">
-                            <span className="starter">{workExp.length > 0 ? "|" : null }</span>
-                            <span className="resume-span">{workExp.length > 0 ? "Experience" : null }</span>
-                        </div>
-                        <div className="experience-list">
-                            {workExp.length > 0 ? workExp.map((item) => {
-                            return (
-                                    <div className="res-item">
-                                        <div className="res-item-header">
-                                            <span className="resume-position">{item.title}  | {item.company}</span>
-                                            <span className="resume-position">{parseDate(item.start_date)}  - {parseDate(item.end_date)}</span>
-                                        </div>
-                                        <ul>
-                                            <li><span className="resume-desc">{item.description}</span></li>
-                                        </ul>
-                                    </div>
-                                );
-                                })
-                            :  "" }
-                        </div>
+        if(this.props.name) {
+            return (
+                <div id="resume" className="resume-container">
+                    <div className="main-hd">
+                        <img className="normal" src="../img/resume-gif.webp" alt="icon" className="main-hd-img" />
+                        <span id="test" className="main-hd-txt">Resume</span>
                     </div>
-                    <div className="resume-field">
-                        <div className="resume-header">
-                            <span className="starter">{eduLvl.length > 0 ? "|" : null }</span>
-                            <span className="resume-span">{eduLvl.length > 0 ? "Education" : null }</span>
-                        </div>
-                        <div className="experience-list">
-                            {eduLvl.length > 0 ? eduLvl.map((item) => {
-                            return (
-                                    <div className="res-item">
-                                        <div className="res-item-header">
-                                            <span className="resume-position">{item.school}  | {item.education_level}</span>
-                                            <span className="resume-position">{item.timeperiodfrom}  - {item.timeperiodfrom}</span>
+                    <div className="resume-cont" id="test">
+                        <div className="resume-field">
+                            <div className="resume-header">
+                                <span className="starter">{workExp.length > 0 ? "|" : null }</span>
+                                <span className="resume-span">{workExp.length > 0 ? "Experience" : null }</span>
+                            </div>
+                            <div className="experience-list">
+                                {workExp.length > 0 ? workExp.map((item) => {
+                                return (
+                                        <div className="res-item">
+                                            <div className="res-item-header">
+                                                <span className="resume-position">{item.title}  | {item.company}</span>
+                                                <span className="resume-position">{parseDate(item.start_date)}  - {parseDate(item.end_date)}</span>
+                                            </div>
+                                            <ul>
+                                                <li><span className="resume-desc">{item.description}</span></li>
+                                            </ul>
                                         </div>
-                                        <ul>
-                                            <li><span className="resume-desc">Field of study: {item.field_of_study === null ? "N/A" : "N/A"}</span></li>
-                                        </ul>
-                                    </div>
-                                );
-                                })
-                            :  "" }
+                                    );
+                                    })
+                                :  "" }
+                            </div>
                         </div>
+                        <div className="resume-field">
+                            <div className="resume-header">
+                                <span className="starter">{eduLvl.length > 0 ? "|" : null }</span>
+                                <span className="resume-span">{eduLvl.length > 0 ? "Education" : null }</span>
+                            </div>
+                            <div className="experience-list">
+                                {eduLvl.length > 0 ? eduLvl.map((item) => {
+                                return (
+                                        <div className="res-item">
+                                            <div className="res-item-header">
+                                                <span className="resume-position">{item.school}  | {item.education_level}</span>
+                                                <span className="resume-position">{item.timeperiodfrom}  - {item.timeperiodfrom}</span>
+                                            </div>
+                                            <ul>
+                                                <li><span className="resume-desc">Field of study: {item.field_of_study === null ? "N/A" : "N/A"}</span></li>
+                                            </ul>
+                                        </div>
+                                    );
+                                    })
+                                :  "" }
+                            </div>
+                        </div>
+                        <div className="resume-field">
+                            <div className="resume-header">
+                                <span className="starter">{cert.length > 0 ? "|" : null }</span>
+                                <span className="resume-span">{cert.length > 0 ? "Certifications" : null }</span>
+                            </div>
+                            <div className="experience-list">
+                                {cert.length > 0 ? cert.map((item) => {
+                                return (
+                                        <div className="res-item">
+                                            <div className="res-item-header">
+                                                <span className="resume-position">{item.certification_name}</span>
+                                                <span className="resume-position">Start Date: {parseDate(item.start_date)}</span>
+                                            </div>
+                                        </div>
+                                    );
+                                    })
+                                :  "" }
+                            </div>
+                        </div>
+                        <div className="resume-field">
+                            <div className="resume-header">
+                                <span className="starter">{cca.length > 0 ? "|" : null }</span>
+                                <span className="resume-span">{cca.length > 0 ? "Community Service" : null }</span>
+                            </div>                
+                            <div className="experience-list">
+                                {cca.length > 0 ? cca.map((item) => {
+                                return (
+                                        <div className="res-item">
+                                            <div className="res-item-header">
+                                                <span className="resume-position">{item.cca}</span>
+                                                <span className="resume-position">{parseDate(item.start_date)} - {parseDate(item.end_date)}</span>
+                                                <span className="resume-position">Role: {item.role}</span>
+                                            </div>
+                                        </div>
+                                    );
+                                    })
+                                :  "" }
+                            </div>
+                        </div>
+                        <div className="resume-field">
+                            <div className="resume-header">
+                                <span className="starter">{achievements.length > 0 ? "|" : null }</span>
+                                <span className="resume-span">{achievements.length > 0 ? "Awards": null}</span>
+                            </div>                
+                            <div className="experience-list">
+                                {achievements.length > 0 ? achievements.map((item) => {
+                                return (
+                                        <div className="res-item">
+                                            <div className="res-item-header">
+                                                <span className="resume-position">{item.award}</span>
+                                                <span className="resume-position">{parseDate(item.awarding_date)}}</span>
+                                            </div>
+                                        </div>
+                                    );
+                                    })
+                                :  "" }
+                            </div>
+                        </div>  
                     </div>
-                    <div className="resume-field">
-                        <div className="resume-header">
-                            <span className="starter">{cert.length > 0 ? "|" : null }</span>
-                            <span className="resume-span">{cert.length > 0 ? "Certifications" : null }</span>
-                        </div>
-                        <div className="experience-list">
-                            {cert.length > 0 ? cert.map((item) => {
-                            return (
-                                    <div className="res-item">
-                                        <div className="res-item-header">
-                                            <span className="resume-position">{item.certification_name}</span>
-                                            <span className="resume-position">Start Date: {item.start_date}</span>
-                                        </div>
-                                    </div>
-                                );
-                                })
-                            :  "" }
-                        </div>
-                    </div>
-                    <div className="resume-field">
-                        <div className="resume-header">
-                            <span className="starter">{cca.length > 0 ? "|" : null }</span>
-                            <span className="resume-span">{cca.length > 0 ? "Community Service" : null }</span>
-                        </div>                
-                        <div className="experience-list">
-                            {cca.length > 0 ? cca.map((item) => {
-                            return (
-                                    <div className="res-item">
-                                        <div className="res-item-header">
-                                            <span className="resume-position">{item.cca}</span>
-                                            <span className="resume-position">{parseDate(item.start_date)} - {parseDate(item.end_date)}</span>
-                                            <span className="resume-position">Role: {item.role}</span>
-                                        </div>
-                                    </div>
-                                );
-                                })
-                            :  "" }
-                        </div>
-                    </div>
-                    <div className="resume-field">
-                        <div className="resume-header">
-                            <span className="starter">{achievements.length > 0 ? "|" : null }</span>
-                            <span className="resume-span">{achievements.length > 0 ? "Awards": null}</span>
-                        </div>                
-                        <div className="experience-list">
-                            {achievements.length > 0 ? achievements.map((item) => {
-                            return (
-                                    <div className="res-item">
-                                        <div className="res-item-header">
-                                            <span className="resume-position">{item.award}</span>
-                                            <span className="resume-position">{parseDate(item.awarding_date)}}</span>
-                                        </div>
-                                    </div>
-                                );
-                                })
-                            :  "" }
-                        </div>
-                    </div>  
                 </div>
+            )
+        }
+        return null;
+    }
+
+    portfolioHeader() {
+        return (
+            <div className="main-hd">
+                <img className="normal" src="../img/portfolio-gif.webp" alt="icon" className="main-hd-img" />
+                <span id="test" className="main-hd-txt">Portfolio</span>
             </div>
         )
     }
@@ -234,7 +249,7 @@ export default class handleViewStudent extends Component{
                                     {this.props.photo == "" || this.props.photo == "null" || this.props.photo == null ?
                                         <img className="normal" src="../img/user.png" alt="poster" className="imageStyle" />
                                     :
-                                    <img className="normal" src={this.props.photo} alt="poster" className="image" />
+                                    <img className="normal" src={this.props.photo} alt="poster" className="image animated fadeInLeft" />
                                     }
                                 </div>
                             </div>
@@ -271,7 +286,7 @@ export default class handleViewStudent extends Component{
                                     </div>                            
                                 </div>
                             </div>
-                            <div className="student-card nxs">
+                            <div className="student-card nxs animated fadeInLeft">
                                 <div className="student-header-container">
                                     <i className="fa fa-graduation-cap fa-2x"></i>
                                     <h1 className="mainHeader student-header-text">Course</h1>
@@ -286,7 +301,7 @@ export default class handleViewStudent extends Component{
                             <span className="y-btn"><Scrollchor to="portfolio" animate={anim}>MY PORTFOLIO</Scrollchor></span>
                         </div>
                         <div className="student-about-info">
-                            <div className="student-card">
+                            <div className="student-card animated fadeInRight">
                                 <h1 className="mainHeader student-header-text">About me</h1>
                                 <p className="">{ this.props.studentDesc }</p>
                             </div>
@@ -359,46 +374,47 @@ export default class handleViewStudent extends Component{
             {this.renderStudentProfile()}
 
             <div className="clearfix"></div>
-
-            {this.state.counterPortfolio ?
-                <div>
-                    <hr/>
-                    <table style={ tableCenter }>
-                        <tr>
-                            <td style={ tableWidthImg }><img className="normal" src="./../img/briefcase.png" style={ icon }/></td>
-                            <td style={ tableWidth }>
-                                <h1>Portfolio</h1>
-                                <h3 style={ subText }>Some of My Works</h3>
-                            </td>
-                        </tr>
-                    </table>
-                    <hr/>
-                </div>
-            : "" }
-
-            {this.props.projects.length > 0 &&
-                <div id="wrap">
-                    <div id="header">
-                        {/*<h1 className="mainHeader">Projects</h1>*/}
-
-                        <div className="w3-container">
-                            {/*<h2>Mobile First Responsiveness</h2>
-                                    <p className="w3-large">Try to resize the window!</p>
-                            http://54.191.109.239/FYPXpal/AmandaInfo*/}
-                        </div>
-
-                        <div className="w3-row w3-border" id="portfolio">
-                            <ProjectCarousel
-                                allProjects={this.props.projects}
-                            />
-                        </div>
-
-                        {/*This is to ensure that the div height covers all content*/}
-                        <div className="clearfix"></div>
+            <div className="main-ct-portfolio">
+                {this.state.counterPortfolio ?
+                    <div>
+                        <hr/>
+                        <table style={ tableCenter }>
+                            <tr>
+                                <td style={ tableWidthImg }><img className="normal" src="./../img/briefcase.png" style={ icon }/></td>
+                                <td style={ tableWidth }>
+                                    <h1>Portfolio</h1>
+                                    <h3 style={ subText }>Some of My Works</h3>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr/>
                     </div>
-                </div>
-            }
+                : "" }
 
+                {this.props.projects.length > 0 &&
+                    <div id="wrap">
+                        <div id="header">
+                            {/*<h1 className="mainHeader">Projects</h1>*/}
+
+                            <div className="w3-container">
+                                {/*<h2>Mobile First Responsiveness</h2>
+                                        <p className="w3-large">Try to resize the window!</p>
+                                http://54.191.109.239/FYPXpal/AmandaInfo*/}
+                            </div>
+
+                            <div className="w3-row w3-border" id="portfolio">
+                                <ProjectCarousel
+                                    allProjects={this.props.projects}
+                                    header={this.portfolioHeader()}
+                                />
+                            </div>
+
+                            {/*This is to ensure that the div height covers all content*/}
+                            <div className="clearfix"></div>
+                        </div>
+                    </div>
+                }
+            </div>
             <br />
             {this.renderResume()}
             <br />

@@ -32,22 +32,27 @@ export default class AllStudents extends Component{
         infoSecurityNames: ['Info Security Underneath', 'Info Security Underneath', 'Info Security Underneath'],
         infoSecurityDesc: ['Info Security Description', 'Info Security Description', 'Info Security Description'],
         infoSecurity: "Information Security",
+        infoSecurityid: "1",
         animationArtPosters: ['./img/Project1.jpg', './img/Project1.jpg', './img/Project1.jpg'],
         animationArtNames: ['Animation Art Underneath', 'Animation Art Underneath', 'Animation Art Underneath'],
         animationArtDesc: ['Animation Art Description', 'Animation Art Description', 'Animation Art Description'],
         animationArt: "Animation Art",
+        animationArtid: "2",
         financialInfoPosters: ['./img/Project1.jpg', './img/Project1.jpg', './img/Project1.jpg'],
         financialInfoNames: ['Financial Information Underneath', 'Financial Information Underneath', 'Financial Information Underneath'],
         financialInfoDesc: ['Financial Information Description', 'Financial Information Description', 'Financial Information Description'],
         financialInfo: "Financial Informatics",
+        financialInfoid: "3",
         infoTechPosters: ['./img/Project1.jpg', './img/Project1.jpg', './img/Project1.jpg'],
         infoTechNames: ['Info Tech Underneath', 'Info Tech Underneath', 'Info Tech Underneath'],
         infoTechDesc: ['Info Tech Description', 'Info Tech Description', 'Info Tech Description'],
         infoTech: "Information Technology",
+        infoTechid: "4",
         gameDesignPosters: ['./img/Project1.jpg', './img/Project1.jpg', './img/Project1.jpg'],
         gameDesignNames: ['Game Design Underneath', 'Game Design Underneath', 'Game Design Underneath'],
         gameDesignDesc: ['Game Design Description', 'Game Design Description', 'Game Design Description'],
         gameDesign: "Immersive Media & Game Design",
+        gameDesignid: "5",
     };
   }
 
@@ -68,6 +73,7 @@ export default class AllStudents extends Component{
                   projectName={this.state.infoSecurityNames}
                   projectDesc={this.state.infoSecurityDesc}
                   projectTitle={this.state.infoSecurity}
+                  facultyID={this.state.infoSecurityid}
               />
               <br/>
               <EachFaculty
@@ -75,6 +81,7 @@ export default class AllStudents extends Component{
                   projectName={this.state.animationArtNames}
                   projectDesc={this.state.animationArtDesc}
                   projectTitle={this.state.animationArt}
+                  facultyID={this.state.animationArtid}
               />
               <br/>
               <EachFaculty
@@ -82,6 +89,7 @@ export default class AllStudents extends Component{
                   projectName={this.state.financialInfoNames}
                   projectDesc={this.state.financialInfoDesc}
                   projectTitle={this.state.financialInfo}
+                  facultyID={this.state.financialInfoid}
               />
               <br/>
               <EachFaculty
@@ -89,6 +97,7 @@ export default class AllStudents extends Component{
                   projectName={this.state.infoTechNames}
                   projectDesc={this.state.infoTechDesc}
                   projectTitle={this.state.infoTech}
+                  facultyID={this.state.infoTechid}
               />
               <br/>
               <EachFaculty
@@ -96,6 +105,7 @@ export default class AllStudents extends Component{
                   projectName={this.state.gameDesignNames}
                   projectDesc={this.state.gameDesignDesc}
                   projectTitle={this.state.gameDesign}
+                  facultyID={this.state.gameDesignid}
               />
           </div>
           <br />

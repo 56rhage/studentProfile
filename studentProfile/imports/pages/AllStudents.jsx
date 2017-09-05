@@ -30,6 +30,7 @@ export default class AllStudents extends Component{
 
       this.state = {
           allStudents: [],
+          search: '',
       };
     }
 
@@ -69,15 +70,23 @@ export default class AllStudents extends Component{
       }
     }
 
+    /*Method for search to call*/
+    onSearchChange(value){
+        console.log("Entered All Students");
+        this.setState({
+            search: value,
+        });
+    }
+
     render() {
         return (
           <div>
-              <NavigationApp allList={this.state.allStudents}/>
+              <NavigationApp allList={this.state.allStudents} />
               <br/>
               <div className="contentWrapper">
                   {/*<Filter />
                   <br/>*/}
-                  <ListOfStudents />
+                  <ListOfStudents search={this.state.search}/>
               </div>
               <br />
               <Footer />

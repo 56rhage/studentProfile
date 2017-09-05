@@ -19,7 +19,7 @@ export default class ListOfStudents extends Component{
       this.state = {
           allStudents: [],
           student_id: '',
-          term: '',
+          search: '',
       };
 
       this.searchHandler = this.searchHandler.bind(this);
@@ -28,6 +28,12 @@ export default class ListOfStudents extends Component{
 
     searchHandler(event){
         this.setState({ term: event.target.value })
+    }
+
+    componentWillReceiveProps(newSearch){
+        this.setState({
+            search: newSearch
+        });
     }
 
     async componentDidMount(){
@@ -85,11 +91,11 @@ export default class ListOfStudents extends Component{
           <div style={filter}>
               <form>
                   <button type="button" onClick={this.searchHandler} class="focus" value="" style={eachButton}>All</button>
-                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Animation & 3D Arts" style={eachButton}>Diploma in Animation & 3D Arts</button>
-                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Financial Informatics" style={eachButton}>Diploma in Financial Informatics</button>
-                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Game Design" style={eachButton}>Diploma in Game Design</button>
-                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Inforamtion Technology" style={eachButton}>Diploma in Inforamtion Technology</button>
-                  <button type="button" onClick={this.searchHandler} class="focus" value="Arts Business Management" style={eachButton}>Arts Business Management</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Information Security & Forensics" style={eachButton}>Information Security & Forensics</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Animation & 3D Arts" style={eachButton}>Animation & 3D Arts</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Financial Informatics" style={eachButton}>Financial Informatics</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Information Technology" style={eachButton}>Information Technology</button>
+                  <button type="button" onClick={this.searchHandler} class="focus" value="Diploma in Immersive Media & Game Design" style={eachButton}>Immersive Media & Game Design</button>
               </form>
           </div>
 

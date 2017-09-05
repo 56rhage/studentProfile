@@ -10,8 +10,8 @@ import ViewStudent from '../pages/ViewStudent.jsx';
 import AllProjects from '../pages/AllProjects.jsx';
 import ViewProject from '../pages/ViewProject.jsx';
 import AllFaculty from '../pages/AllFaculty.jsx';
-import Project from '../components/project/handleViewProject.jsx';
-import handleView from '../components/student/handleViewStudent.jsx';
+import ViewFaculty from '../pages/FacultyInfo.jsx';
+//import Project from '../components/project/handleViewProject.jsx';
 
 const browserHistory = createBrowserHistory();
 
@@ -25,8 +25,8 @@ export const renderRoutes = () => (
               <Route exact path="/AllProjects" component={AllProjects}/>
               <Route exact path="/ViewProject/:projectID" component={ViewProject}/>
               <Route exact path="/AllFaculty" component={AllFaculty}/>
-              <Route exact path="/handleProject" component={Project}/>
-              <Route exact path="/testing" component={handleView}/>
-    		</Switch>
+              {/*<Route exact path="/handleProject" component={Project}/>*/}
+              <Route exact path="/ViewFaculty" component={ViewFaculty}/>
+          </Switch>
   	  </Router>
 );

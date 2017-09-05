@@ -41,12 +41,10 @@ export default class ViewProject extends Component{
       };
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         initGA();
         logPageView();
-      }
 
-    async componentDidMount(){
         proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
         var projectID = this.state.projectID;

@@ -24,7 +24,14 @@ export default class eachFaculty extends Component{
         <div id="header">
             <div className="w3-row w3-border">
                 <div className="w3-quarterFacultyName w3-container hidTop">
-                    <h1 className="mainHeader">{this.props.projectTitle}</h1>
+                    <h1 className="mainHeader">
+                        <Link to ={{
+                            pathname: '/ViewFaculty',
+                            state: { facultyId: this.props.facultyID }
+                        }}>
+                            {this.props.projectTitle}
+                        </Link>
+                    </h1>
                 </div>
                 {this.props.projectPoster.map((poster, index) => {
                     return(
@@ -32,7 +39,7 @@ export default class eachFaculty extends Component{
                         <div className="w3-quarterFaculty w3-container" key={index}>
                             <Link to ={{
                                 pathname: '/ViewProject',
-                                state: { ProjectID: 'b46eebe3-53f4-4d7e-adaf-f7459dffc230' }
+                                state: { ProjectID: '1' }
                             }}>
                                 <p><img className="normal" src={poster} alt="poster" className="image" /></p>
                                 <p className="projHead">{this.props.projectName[this.state.count]}</p>
@@ -45,7 +52,14 @@ export default class eachFaculty extends Component{
                 )
                 }
                 <div className="w3-quarterFacultyName w3-container">
-                    <h1 className="mainHeader hidden">{this.props.projectTitle}</h1>
+                    <h1 className="mainHeader hidden">
+                        <Link to ={{
+                            pathname: '/ViewFaculty',
+                            state: { facultyId: this.props.facultyID }
+                        }}>
+                            {this.props.projectTitle}
+                        </Link>
+                    </h1>
                     <p className="mainLinkFaculty floatBottom"><button className="studentButton">
                         <Link to ={{
                             pathname: '/AllProjects',
@@ -67,4 +81,6 @@ eachFaculty.propTypes = {
     projectPoster: PropTypes.array.isRequired,
     projectName: PropTypes.array.isRequired,
     projectDesc: PropTypes.array.isRequired,
+    projectTitle: PropTypes.string.isRequired,
+    facultyID: PropTypes.string.isRequired,
 };

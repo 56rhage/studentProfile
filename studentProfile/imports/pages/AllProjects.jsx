@@ -36,8 +36,6 @@ export default class AllProjects extends Component{
           <NavigationApp />
           <br/>
           <div className="contentWrapper">
-              <Filter />
-              <br/>
               <ListOfProjects />
           </div>
           <br />

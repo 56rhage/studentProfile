@@ -7,42 +7,6 @@ import Gallery from 'react-grid-gallery';
 import NavigationApp from '../../components/NavigationApp.jsx';
 import Footer from '../../components/Footer.jsx';
 
-export default class handleViewProject extends Component{
-
-    constructor () {
-		super();
-
-        this.state = {
-            getImages: [],
-            listOfImages: [],
-        }
-    }
-
-    update(){
-        this.props.projectImages.map((images) => {
-
-            var img = images.image;
-            var caption = images.desc;
-
-            this.state.getImages.push(
-                {
-                    "src": img,
-                    "thumbnail": img,
-                    "thumbnailWidth": 320,
-                    "thumbnailHeight": 174,
-                    "caption": caption,
-
-                    /*"src": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
-                    "thumbnail": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
-                    "thumbnailWidth": 320,
-                    "thumbnailHeight": 174,
-                    "caption": "After Rain (Jeshu John - designerspics.com)",*/
-                }
-            )
-        });
-    }
-
-  render(){
 
     const params = {
         pagination: '.swiper-pagination',
@@ -114,7 +78,136 @@ export default class handleViewProject extends Component{
 
     var content = {
         fontSize: '12px',
+    } 
+
+export default class handleViewProject extends Component{
+
+    constructor () {
+		super();
+
+        this.state = {
+            getImages: [],
+            listOfImages: [],
+        }
     }
+
+    update(){
+        this.props.projectImages.map((images) => {
+
+            var img = images.image;
+            var caption = images.desc;
+
+            this.state.getImages.push(
+                {
+                    "src": img,
+                    "thumbnail": img,
+                    "thumbnailWidth": 320,
+                    "thumbnailHeight": 174,
+                    "caption": caption,
+
+                    /*"src": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_b.jpg",
+                    "thumbnail": "https://c2.staticflickr.com/9/8817/28973449265_07e3aa5d2e_n.jpg",
+                    "thumbnailWidth": 320,
+                    "thumbnailHeight": 174,
+                    "caption": "After Rain (Jeshu John - designerspics.com)",*/
+                }
+            )
+        });
+    }
+
+  renderGallery() {
+      return (
+                <div className="project-gallery animated fadeInLeft">
+                    {this.props.projectImages.length > 0 &&
+                        <div>
+                            <div id="wrap">
+                                <h1 className="my-3">Gallery</h1>
+                                <div>
+                                    {this.update()}
+                                    <Gallery
+                                        images={this.state.getImages}
+                                        enableImageSelection={false}
+                                    />
+                                </div>
+
+                                {/*This is to ensure that the div height covers all content*/}
+                                <div className="clearfix"></div>
+                            </div>
+                            <hr/>
+                        </div>
+                    }
+                    {this.props.projectMembers.length > 0 &&
+                        <div id="wrap">
+                            <h1 className="mainHeader">Team Member</h1>
+
+                            <div className="container-fluid">
+                                <div className="row" style={ justifyContent }>
+                                    {this.props.projectMembers.map((studentProject, index) => {
+                                        return(
+                                            <div className="project-team" key={index}>
+                                                <Link to ={{
+                                                    //pathname: '/ViewStudent',
+                                                    pathname: '/ViewStudent/' + studentProject.student_id,
+                                                    //state: { StudentID: studentProject.student_id }
+                                                }}>
+                                                    <img className="normal" src={ studentProject.student_photo } alt={ studentProject.student_name } style={ imageStyle } />
+                                                    <h2>{studentProject.student_name}</h2>
+                                                    <p>{studentProject.project_role}</p>
+                                                </Link>
+                                            </div>
+                                        )
+                                    }
+                                    )}
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    }
+                </div> 
+      )
+  }
+
+  renderProjectView() {     
+      if (this.props.projectName) {
+          return (
+            <div className="projectContainer">
+                <div className="project-info-main">
+                    {/*750x500*/}
+                    <div className="project-img-custom animated fadeInRight"><img className="" src={this.props.projectPoster} alt="" /></div>
+                    <div className="project-det">
+                        <div className="project-info-details animated fadeInLeft">
+                            <h3 className="my-3">Project Name - <span>{this.props.projectName}</span></h3>
+                            <br/>
+                            <h3 className="my-3">Description</h3>
+                            <p style={content}>{this.props.projectDesc}</p>
+                        </div>
+
+                        <div className="project-info-details animated fadeInLeft">
+                            <h3 className="my-3">Project Details</h3>
+                            Start Date: {this.props.projectStartDate}
+                            <br/>
+                            End Date: {this.props.projectEndDate}
+                        </div>
+                    </div>
+
+                </div>
+                {this.renderGallery()}     
+            </div>              
+          )
+      }
+      return (
+            <div className="portfolio-card">
+                <span className="custom-loader">
+                    <i className="fa fa-spinner fa-spin fa-5x"></i>
+                </span>
+            </div>          
+      )
+  }
+
+  render(){
+      console.log("Proper", this.props);
 
     var profileImg = './img/profile.jpg';
     var project = './img/Project1.jpg';
@@ -125,77 +218,7 @@ export default class handleViewProject extends Component{
         <div>
             <NavigationApp />
             <br/>
-
-            <div className="projectContainer">
-                <h1 className="my-4">{this.props.projectName} {/*<small>Secondary Text</small>*/}</h1>
-
-                <div className="row">
-                    {/*750x500*/}
-                    <div className="col-md-7"><img className="normal" className="img-fluid" src={this.props.projectPoster} alt="" style={ posterImage } /></div>
-                    <div className="col-md-4">
-                        <h3 className="my-3">Project Description</h3>
-                        <p style={content}>{this.props.projectDesc}</p>
-                        <h3 className="my-3">Project Details</h3>
-                        Start Date: {this.props.projectStartDate}
-                        <br/>
-                        End Date: {this.props.projectEndDate}
-                    </div>
-                </div>
-            </div>
-
-
-            <div style={alignCenter}>
-
-                {this.props.projectImages.length > 0 &&
-                    <div>
-                        <div id="wrap">
-                            <h1 className="mainHeader">Gallery</h1>
-                            <div style={padding}>
-                                {this.update()}
-                                <Gallery
-                                    images={this.state.getImages}
-                                    enableImageSelection={false}
-                                />
-                            </div>
-
-                            {/*This is to ensure that the div height covers all content*/}
-                            <div className="clearfix"></div>
-                        </div>
-                        <hr/>
-                    </div>
-                }
-
-                {this.props.projectMembers.length > 0 &&
-                    <div id="wrap">
-                        <h1 className="mainHeader">Team Member</h1>
-
-                        <div className="container-fluid">
-                            <div className="row" style={ justifyContent }>
-                                {this.props.projectMembers.map((studentProject, index) => {
-                                    return(
-                                        <div className="col-xs-3" key={index}>
-                                            <Link to ={{
-                                                //pathname: '/ViewStudent',
-                                                pathname: '/ViewStudent/' + studentProject.student_id,
-                                                //state: { StudentID: studentProject.student_id }
-                                            }}>
-                                                <img className="normal" src={ studentProject.student_photo } alt={ studentProject.student_name } style={ imageStyle } />
-                                                <h2>{studentProject.student_name}</h2>
-                                                <p>{studentProject.project_role}</p>
-                                            </Link>
-                                        </div>
-                                    )
-                                }
-                                )}
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                }
-            </div>
-
+            {this.renderProjectView()}
             {/*This is to ensure that the div height covers all content*/}
             <div className="clearfix"></div>
 

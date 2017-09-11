@@ -89,7 +89,7 @@ export default class ViewProject extends Component{
           }else{
               //Handle other than success
           }
-      }catch(error){
+      } catch (error){
           alert(error);
       }
     }

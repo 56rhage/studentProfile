@@ -388,12 +388,108 @@ img.logo {
   padding: 5%;
 }
 
+.project-cont-custom {
+
+}
+
+.project-paginate {
+  margin: 115px;
+}
+
+.project-card {
+  height: 500px;
+  width: 280px;
+  border: 1px solid;
+  margin: 30px;
+}
+
+.project-card-details {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.project-list-custom {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+}
+
 .spring-fever {
   background-color: #f2f2f2;
 }
 
+.project-search-input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    padding: 7px 12px;
+    position: relative;
+    width: 30%;
+    border: 1px solid rgb(226, 226, 226);
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(102, 102, 102);
+    cursor: initial;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: 16px;
+    line-height: inherit;
+    font-family: inherit;
+    height: 100%;
+}
+
+.project-filters-intro {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.project-search-select {
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 /*About Page*/
+.about-alumni {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+.about-sticky-contr {
+    position: fixed;
+    width: 15%;
+    height: 80%;
+    /*justify-content: center;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.about-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.school-map {
+  margin-bottom: 40px;
+  border-bottom: 1px solid lightgray;
+}
+
+.alumni-member {
+  /*margin: 10px;*/
+  width: 200px;
+}
+
+.alumni-img {
+  width: 200px !important;
+  height: 200px !important;
+}
 
 .active {
   border-left-style: solid;
@@ -403,6 +499,9 @@ img.logo {
   background-color: #eee;
 }
 
+.about-schroll {
+  margin-bottom: 10px;
+}
 .empty {
   border-left-style: none;
   background-color: none;
@@ -437,6 +536,31 @@ img.logo {
   }
   .student-skill-card {
     /*font-size: 0.5em;*/
+  }
+  .project-card-details {
+    font-size: 15px;
+  }
+  .project-paginate {
+    margin: 0;
+  }
+  .project-info-main {
+    flex-wrap: wrap;
+  }
+  .project-img-custom {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+  .project-det {
+    width: 100% !important;
+  }
+  .my-3 {
+    font-size: 1.1rem !important;
+  }
+  .about-alumni {
+    flex-wrap: wrap;
+  }
+  .about-sticky-contr {
+    display: none !important;
   }
   /*Student Page*/
 }
@@ -1495,11 +1619,86 @@ p.mainLink {
 /*New*/
 
 .projectContainer {
-  margin-right: auto;
+  /*margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px;
-  width: 100%;
+  width: 100%;*/
+    max-width: 70rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 80px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #f2f2f2;
+  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.project-info-details {
+    font-weight: 600;
+    word-spacing: 2px;
+    border-radius: 8px;
+    padding: 1.1rem;
+    background: #fff;
+    -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+    position: relative;
+    z-index: 2;
+    background: darkgrey;
+    margin-bottom: 30px;
+}
+
+.project-team {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-team h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.project-team p {
+  display: flex;
+  justify-content: center;
+}
+
+.project-det {
+   width: 60%;
+
+}
+
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-info-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.project-img-custom {
+  width: 40%;
+  margin-left: 3.5%;
+}
+
+.project-img-custom img {
+    border: 2px solid;
+    width: 350px;
 }
 
 .row {

@@ -563,6 +563,9 @@ img.logo {
     display: none !important;
   }
   /*Student Page*/
+  .main-ct-portfolio {
+    max-width: none !important;
+  }
 }
 
 

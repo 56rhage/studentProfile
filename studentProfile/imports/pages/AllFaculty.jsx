@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { withRouter } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
+import Parallax from 'react-springy-parallax'
 
 import NavigationApp from '../components/NavigationApp.jsx';
 import EachFaculty from '../components/faculty/eachFaculty.jsx';
@@ -28,6 +29,9 @@ export default class AllStudents extends Component{
     super(props);
 
     this.state = {
+        getFacultyList: [],
+
+
         infoSecurityPosters: ['./img/Project1.jpg', './img/Project1.jpg', './img/Project1.jpg'],
         infoSecurityNames: ['Info Security Underneath', 'Info Security Underneath', 'Info Security Underneath'],
         infoSecurityDesc: ['Info Security Description', 'Info Security Description', 'Info Security Description'],
@@ -61,53 +65,92 @@ export default class AllStudents extends Component{
       logPageView();
   }
 
+  pushProjects(){
+
+      var facultyID = ["0", "1", "2", "3", "4"];
+      var facultyTitle = ["Information Security", "Animation Art", "Financial Informatics", "Information Technology", "Immersive Media & Game Design"];
+
+      var one0 = [
+          {projectImage: './img/Project1.jpg', projectName: 'Info Security Underneath', projectDesc: 'Info Security Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Info Security Underneath', projectDesc: 'Info Security Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Info Security Underneath', projectDesc: 'Info Security Description'},
+      ];
+      var two1 = [
+          {projectImage: './img/Project1.jpg', projectName: 'Animation Art Underneath', projectDesc: 'Animation Art Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Animation Art Underneath', projectDesc: 'Animation Art Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Animation Art Underneath', projectDesc: 'Animation Art Description'},
+      ];
+      var three2 = [
+          {projectImage: './img/Project1.jpg', projectName: 'Financial Informatics Underneath', projectDesc: 'Financial Informatics Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Financial Informatics Underneath', projectDesc: 'Financial Informatics Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Financial Informatics Underneath', projectDesc: 'Financial Informatics Description'},
+      ];
+      var four3 = [
+          {projectImage: './img/Project1.jpg', projectName: 'Information Technology Underneath', projectDesc: 'Information Technology Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Information Technology Underneath', projectDesc: 'Information Technology Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Information Technology Underneath', projectDesc: 'Information Technology Description'},
+      ];
+      var five4 = [
+          {projectImage: './img/Project1.jpg', projectName: 'Immersive Media & Game Design Underneath', projectDesc: 'Immersive Media & Game Design Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Immersive Media & Game Design Underneath', projectDesc: 'Immersive Media & Game Design Description'},
+          {projectImage: './img/Project1.jpg', projectName: 'Immersive Media & Game Design Underneath', projectDesc: 'Immersive Media & Game Design Description'},
+      ];
+
+      facultyID.map((id) => {
+
+          let result = one0
+
+          switch (id) {
+              case 0:
+                  result = one0;
+                  break;
+              case 1:
+                  result = two1;
+                  break;
+              case 2:
+                  result = three2;
+                  break;
+              case 3:
+                  result = four3;
+                  break;
+              case 4:
+                  result = five4;
+                  break;
+          }
+
+          this.state.getFacultyList.push({
+              "facultyTitle": facultyTitle[id],
+              "facultyID": id,
+              "featuredProjects": result,
+          })
+
+          console.log(this.state.getFacultyList);
+      })
+
+
+  }
+
   render() {
+      this.pushProjects()
 
     return (
       <div>
-          <NavigationApp />
+          <NavigationApp display={false}/>
           <br/>
+
           <div className="contents">
-              <EachFaculty
-                  projectPoster={this.state.infoSecurityPosters}
-                  projectName={this.state.infoSecurityNames}
-                  projectDesc={this.state.infoSecurityDesc}
-                  projectTitle={this.state.infoSecurity}
-                  facultyID={this.state.infoSecurityid}
-              />
-              <br/>
-              <EachFaculty
-                  projectPoster={this.state.animationArtPosters}
-                  projectName={this.state.animationArtNames}
-                  projectDesc={this.state.animationArtDesc}
-                  projectTitle={this.state.animationArt}
-                  facultyID={this.state.animationArtid}
-              />
-              <br/>
-              <EachFaculty
-                  projectPoster={this.state.financialInfoPosters}
-                  projectName={this.state.financialInfoNames}
-                  projectDesc={this.state.financialInfoDesc}
-                  projectTitle={this.state.financialInfo}
-                  facultyID={this.state.financialInfoid}
-              />
-              <br/>
-              <EachFaculty
-                  projectPoster={this.state.infoTechPosters}
-                  projectName={this.state.infoTechNames}
-                  projectDesc={this.state.infoTechDesc}
-                  projectTitle={this.state.infoTech}
-                  facultyID={this.state.infoTechid}
-              />
-              <br/>
-              <EachFaculty
-                  projectPoster={this.state.gameDesignPosters}
-                  projectName={this.state.gameDesignNames}
-                  projectDesc={this.state.gameDesignDesc}
-                  projectTitle={this.state.gameDesign}
-                  facultyID={this.state.gameDesignid}
-              />
+              <Parallax ref="parallax" pages={6}>
+                  <EachFaculty
+                      getFacultyList={this.state.getFacultyList}
+                      projectPoster={this.state.infoSecurityPosters}
+                      projectName={this.state.infoSecurityNames}
+                      projectDesc={this.state.infoSecurityDesc}
+                      projectTitle={this.state.infoSecurity}
+                      facultyID={this.state.infoSecurityid}
+                  />
+              </Parallax>
           </div>
+          <div className="clearfix"></div>
           <br />
           <Footer />
       </div>

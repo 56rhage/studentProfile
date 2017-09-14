@@ -1,0 +1,240 @@
+/*Project*/
+.projectContainer {
+  margin-right: auto;
+  /*margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  width: 100%;*/
+  max-width: 70rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #f2f2f2;
+  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.projectContainer-nobg {
+  margin-right: auto;
+  /*margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  width: 100%;*/
+  max-width: 70rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.project-info-details {
+  font-weight: 600;
+  word-spacing: 2px;
+  border-radius: 8px;
+  padding: 1.1rem;
+  background: #fff;
+  -webkit-box-shadow: 1px 3px 9px #242424;
+  -moz-box-shadow: 1px 3px 9px #242424;
+  box-shadow: 1px 3px 9px #242424;
+  position: relative;
+  z-index: 2;
+  background: #cccccc;
+  margin-bottom: 30px;
+}
+
+.project-team {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-team h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.project-team p {
+  display: flex;
+  justify-content: center;
+}
+
+.project-det {
+  width: 90%;
+  margin: auto;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.project-video {
+  width: 100%;
+  text-align: center;
+}
+
+.project-info-main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.project-img-custom {
+  width: 90%;
+  margin-left: 3.5%;
+  text-align: -webkit-center;
+}
+
+.project-img-custom img {
+  border: 2px solid;
+  width: 350px;
+}
+
+h1.projectName {
+    font-size: 44px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.projectname-custom {
+  margin-left: 20px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  line-height: 80px;
+  margin-right: 20px !important;
+  padding-bottom: 1.5rem;
+}
+
+.project-header-text {
+  text-transform: uppercase;
+  color: #000;
+  font-size: 20px;
+  text-align: left !important;
+}
+
+.project-main-hd {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.project-main-hd-img {
+  width: 50px;
+  height: 50px;
+  /*border-radius: 50%;
+  background: black;*/
+  padding-right: 1%;
+}
+
+.project-main-hd-txt {
+  margin-left: 5px;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-header-container {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 100%;
+}
+
+.project-header-container i {
+  padding-top: 13px;
+  padding-right: 10px;
+}
+
+.project-info-custom-left {
+  width: 40%;
+  overflow: -webkit-paged-x;
+  padding-bottom: 10px;
+}
+
+.project-info-custom-right {
+  width: 60%;
+  overflow: -webkit-paged-x;
+  padding-bottom: 10px;
+}
+
+iframe, object, embed {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 999px) and (min-width: 248px) {
+  .project-info-custom-left {
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+
+  .project-info-custom-right {
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .project-info-main {
+    display: inline-block;
+  }
+
+  .projectname-custom {
+    padding-bottom: 0;
+  }
+}
+
+/*Adjustment for mobile display - iPhone 5*/
+
+@media screen and (max-width:331px) {
+  .project-header-text {
+    font-size: 18px;
+  }
+
+  .project-main-hd-txt{
+    font-size: 27px;
+  }
+
+  .project-main-hd-img {
+    width: 45px;
+    height: 45px;
+    padding-right: 0.5%;
+  }
+}
+
+/*Adjustment for mobile display - Landscape mode*/
+
+@media screen and (min-width:768px) and (max-width:998px) {
+  .projectName {
+    font-size: 7vw !important;
+  }
+}
+
+/*Adjustments for mobile display - Portrait mode*/
+
+@media screen and (min-width:280px) and (max-width:406px) {
+  .projectName {
+    font-size: 10vw !important;
+  }
+}

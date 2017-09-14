@@ -1,86 +1,69 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { withRouter, Link } from 'react-router-dom';
+import {Meteor} from 'meteor/meteor';
+import {withRouter, Link} from 'react-router-dom';
+import Parallax from 'react-springy-parallax'
 
-export default class eachFaculty extends Component{
-  constructor(props) {
-    super(props);
+export default class eachFaculty extends Component {
 
-    this.state = {
-        count: 0,
-    };
-  }
+	render() {
+		const styles = {
+			fontFamily: 'inherit',
+			fontSize: 14,
+			lineHeight: '10px',
+			color: 'white',
+			display: 'flex',
+			alignItems: 'center',
+			justifyContent: 'center'
+		}
 
-  increaseCount(){
-    this.setState({
-        count: this.state.count + 1
-    });
-  }
+		return (
+            <div>
+                <Parallax.Layer offset={0} speed={1} style={{
+                    backgroundImage: "url(../img/img_a3da_2017.jpg)",
+                    backgroundSize: "contain",
+                }}/>
+                <Parallax.Layer offset={2} speed={1} style={{
+    					backgroundColor: '#805E73'
+                }}/>
+                <Parallax.Layer offset={4} speed={1} style={{
+    					backgroundColor: '#87BCDE'
+                }}/>
 
-  render(){
-    return(
-    <div id="wrap">
-        <div id="header">
-            <div className="w3-row w3-border">
-                <div className="w3-quarterFacultyName w3-container hidTop">
-                    <h1 className="mainHeader">
-                        <Link to ={{
-                            pathname: '/ViewFaculty',
-                            state: { facultyId: this.props.facultyID }
-                        }}>
-                            {this.props.projectTitle}
-                        </Link>
-                    </h1>
-                </div>
-                {this.props.projectPoster.map((poster, index) => {
-                    return(
+                <Parallax.Layer offset={0} speed={0.5} style={styles} onClick={() => this.refs.parallax.scrollTo(1)}>
+                    Faculty Header Here
+                </Parallax.Layer>
 
-                        <div className="w3-quarterFaculty w3-container" key={index}>
-                            <Link to ={{
-                                pathname: '/ViewProject',
-                                state: { ProjectID: '1' }
-                            }}>
-                                <p><img className="normal" src={poster} alt="poster" className="image" /></p>
-                                <p className="projHead">{this.props.projectName[this.state.count]}</p>
-                                <p>{this.props.projectDesc[this.state.count]}</p>
-                            </Link>
-                        </div>
-                    )
-                    {this.increaseCount}
-                }
-                )
-                }
-                <div className="w3-quarterFacultyName w3-container">
-                    <h1 className="mainHeader hidden">
-                        <Link to ={{
-                            pathname: '/ViewFaculty',
-                            state: { facultyId: this.props.facultyID }
-                        }}>
-                            {this.props.projectTitle}
-                        </Link>
-                    </h1>
-                    <p className="mainLinkFaculty floatBottom"><button className="studentButton">
-                        <Link to ={{
-                            pathname: '/AllProjects',
-                        }}>View all projects
-                        </Link>
-                    </button></p>
-                </div>
+                <Parallax.Layer offset={1} speed={-0.1} style={styles}>
+                    Featured Students
+                </Parallax.Layer>
+
+                <Parallax.Layer offset={2} speed={0.5} style={styles} onClick={() => this.refs.parallax.scrollTo(3)}>
+                    Another page ...
+                </Parallax.Layer>
+
+                <Parallax.Layer offset={3} speed={-0.1} style={styles}>
+                    Featured Students
+                </Parallax.Layer>
+
+                <Parallax.Layer offset={4} speed={0.5} style={styles} onClick={() => this.refs.parallax.scrollTo(3)}>
+                    Another page ...
+                </Parallax.Layer>
+
+                <Parallax.Layer offset={5} speed={-0.1} style={styles}>
+                    Featured Students
+                </Parallax.Layer>
+
+                <div className="clearfix"></div>
             </div>
-
-            {/*This is to ensure that the div height covers all content*/}
-            <div className="clearfix"></div>
-        </div>
-    </div>
-            );
-  }
+		);
+	}
 }
 
 eachFaculty.propTypes = {
-    projectPoster: PropTypes.array.isRequired,
-    projectName: PropTypes.array.isRequired,
-    projectDesc: PropTypes.array.isRequired,
-    projectTitle: PropTypes.string.isRequired,
-    facultyID: PropTypes.string.isRequired,
+	projectPoster: PropTypes.array.isRequired,
+	projectName: PropTypes.array.isRequired,
+	projectDesc: PropTypes.array.isRequired,
+	projectTitle: PropTypes.string.isRequired,
+	facultyID: PropTypes.string.isRequired
 };

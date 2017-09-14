@@ -5,8 +5,14 @@ import { withRouter, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Request from 'react-http-request';
 import LinesEllipsis from 'react-lines-ellipsis';
-import Filter from './Filter';
-import matchSorter from 'match-sorter';
+
+import Pagination from '../Pagination.jsx';
+
+function searchingFor(term){
+    return function(x){
+        return x.project_name.toLowerCase().includes(term.toLowerCase()) || x.project_desc.toLowerCase().includes(term.toLowerCase()) || !term;
+    }
+}
 
 export default class ListOfProjects extends Component{
     constructor(props) {
@@ -14,108 +20,116 @@ export default class ListOfProjects extends Component{
 
       this.state = {
           allProjects: [],
+          getProjects: [],
           project_id: '',
-          searchedProject: '',
-          currentState: 'ready'
+          term: '',
+          pageOfItems: [],
+          loading: true,
       };
 
-      this.handleSearch = this.handleSearch.bind(this);
+      this.searchHandler = this.searchHandler.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+      // bind function in constructor instead of render (https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+      this.onChangePage = this.onChangePage.bind(this);
+
+    }
+
+    searchHandler(event){
+        this.setState({
+            term: event.target.value,
+            getProjects: this.state.allProjects.filter(searchingFor(event.target.value)),
+        })
+    }
+
+    onChangePage(pageOfItems) {
+        // update state with new page of items
+        this.setState({ pageOfItems: pageOfItems });
+    }
+
+    handleClick(event){
+        this.setState({ currentPage: Number(event.target.id) });
+    }
+
+    componentWillReceiveProps(newSearch){
+        this.setState({
+            term: newSearch.search,
+            getProjects: this.state.allProjects.filter(searchingFor(newSearch.search)),
+        });
     }
 
     componentDidMount(){
-        // initGA();
-        // logPageView();
+        initGA();
+        logPageView();
       }
 
-    async componentWillMount(){
-        if(this.state.currentState !== 'isLoading') {
-                proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-                /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
-                apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetProjectDisplay';
-                options = {
-                    method: 'GET',
-                };
+    async componentDidMount(){
+        //proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
+        apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetProjectDisplay';
+        options = {
+            method: 'GET',
+        };
 
-            try {
-                /*var response = await fetch(proxyUrl + apiURL, options);*/
-                var response = await fetch(proxyUrl + apiURL, options);
+      try{
+          /*var response = await fetch(proxyUrl + apiURL, options);*/
+          var response = await fetch(apiURL, options);
 
-                // response message
-                var data = await response.json();
-                console.log(data);
-                var status = response.status;
+          // response message
+          var data = await response.json();
+          console.log(data);
+          var status = response.status;
 
-                if (status == 200){
-                // response code
-                var allProjects = data.project_display;
+          if (status == 200){
+          // response code
+          var allProjects = data.project_display;
+          var getProjects = data.project_display;
 
-                this.setState({
-                    allProjects: allProjects,
-                    currentState: 'Loaded'
-                });
-                }else{
-                    //Handle other than success
-                }
-            } catch(error){
-                this.setState({
-                    currentState: 'isLoading'
-                });
-            }
-        }
-    }
-
-  getData() {
-    const { searchedProject, allProjects } = this.state;
-    const searchedFields = ["project_name"];
-    if (searchedProject !== "") {
-      const searchResults = matchSorter(allProjects, searchedProject, { keys: searchedFields });
-      return searchResults;
-    }
-    return allProjects;
-  }
-
-  handleSearch = (event) => {
-    //   console.log("event:", event, "value:", event.target.value, "field:", field);
-    this.setState({
-      searchedProject: event.target.value
-    });
-  }
-
-  renderFilters() {
-      const { allProjects } = this.state;
-      if (allProjects.length > 0) {
-          return (
-              <Filter
-                onChange={this.handleSearch}
-                value={this.state.searchedProject}
-                name={"searchedProject"}
-              />
-          );
+          this.setState({
+            allProjects: allProjects,
+            getProjects: getProjects,
+          });
+          }else{
+              //Handle other than success
+          }
+      }catch(error){
+          alert(error);
       }
-      return null;
-  }
+
+      if(allProjects.length > 0){
+          this.setState({
+              loading: false,
+          });
+      }
+    }
 
   render(){
+      const {term, allProjects, getProjects, pageOfItems, loading} = this.state;
+
       var image={
             width: '280px',
             height: '400px',
-            borderBottom: '1px solid'
       }
 
-      console.log("curstate", this.state.currentState);
-
-      const allProjects = this.getData();
+      if(loading){
+          return (
+              <div className="alignPageCenter">
+                  <span className="custom-loader">
+                      <i className="fa fa-spinner fa-spin fa-5x"></i>
+                  </span>
+              </div>
+          );
+      }
 
       return(
-        <div className="project-paginate">
-            {this.renderFilters()}
-            <div className="projects-cont-custom">
-                <div className="project-list-custom">
-                    {allProjects.map((displayAllProjects, index) => {
+        <div>
+            <div className="w3-cell-content">
+                <div className="w3-row w3-border">
+                    {pageOfItems.filter(searchingFor(term)).map((displayAllProjects, index) => {
+                        /*{this.state.allProjects.map((displayAllProjects, index) => {*/
                         var projectID = displayAllProjects.pid;
 
                         return(
-                            <div className="project-card" key={index}>
+                            <div className="w3-quarter w3-container" key={index}>
 
                                 <Link to ={{
                                     //pathname: '/ViewProject',
@@ -124,10 +138,10 @@ export default class ListOfProjects extends Component{
                                 }}>
                                     <div className="backgroundImage">
                                         <div className="centerImage">
-                                            <img className="" src={ displayAllProjects.project_poster } alt="poster" style={image} />
+                                            <img className="normal" src={ displayAllProjects.project_poster } alt="poster" style={image} />
                                         </div>
                                     </div>
-                                    <p className="project-card-details" id="change">{ displayAllProjects.project_name }</p>
+                                    <p className="projHead" id="change">{ displayAllProjects.project_name }</p>
 
                                     <LinesEllipsis
                                         text={ displayAllProjects.project_desc }
@@ -140,7 +154,11 @@ export default class ListOfProjects extends Component{
                             </div>
                         )
                     })
+
                     }
+
+                    <Pagination items={getProjects} onChangePage={this.onChangePage} term={term} />
+
                 </div>
             </div>
 

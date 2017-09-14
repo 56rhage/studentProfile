@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withRouter, Link } from 'react-router-dom';
 
-export default class Slideshow extends Component{
+export default class PrincipleMsg extends Component{
 
   render() {
     return (

@@ -78,7 +78,7 @@ export default class Home extends Component{
 
     return (
       <div>
-          <NavigationApp />
+          <NavigationApp display={false}/>
           <br/>
           {/*<Slider />*/}
           <Slideshow />

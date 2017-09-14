@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import NavigationApp from '../components/NavigationApp.jsx';
-import Filter from '../components/project/Filter.jsx';
 import ListOfProjects from '../components/project/ListOfProjects.jsx';
 import Footer from '../components/Footer.jsx';
 
@@ -25,18 +24,35 @@ export const logPageView = () => {
 /*Analytics*/
 
 export default class AllProjects extends Component{
+    constructor(props) {
+      super(props);
+
+      this.state = {
+          search: '',
+      };
+    }
+
     componentDidMount(){
         initGA();
         logPageView();
     }
 
+    /*Method for search to call*/
+    onSearchChange(value){
+        this.setState({
+            search: value.target.value,
+        });
+    }
+
   render() {
     return (
       <div>
-          <NavigationApp />
+          <NavigationApp onSearchChange={this.onSearchChange.bind(this)}  display={true}/>
           <br/>
           <div className="contentWrapper">
-              <ListOfProjects />
+              {/*<Filter />
+              <br/>*/}
+              <ListOfProjects search={this.state.search}/>
           </div>
           <br />
           <Footer />

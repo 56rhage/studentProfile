@@ -1,3 +1,54 @@
+/*Pagination*/
+
+.pagination-align {
+  text-align: center;
+  display: inline-block;
+}
+
+.pagination {
+  display: inline-block;
+  width: 100%;
+  padding: unset;
+}
+
+.pagination:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.pagination li {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  list-style: none;
+}
+
+.pagination li.active {
+  background-color: #4b3d62;
+  color: white;
+  border: 1px solid #4b3d62;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.pagination li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/*Pagination*/
+
 img.normal {
   width: inherit !important;
   max-width: 100% !important;
@@ -22,474 +73,7 @@ img.logo {
   }
 }
 
-
-/*Student Page*/
-
-.custom-avatar {
-  width: 200px !important;
-  height: 200px !important;
-}
-
-.main-hd {
-  display: flex;
-  justify-content: center;
-  height: 60px;
-}
-
-.main-hd-img {
-  width: 50px;
-  height: 50px;
-  /*border-radius: 50%;
-  background: black;*/
-  padding-right: 1%;
-}
-
-.main-hd-txt {
-  margin-left: 5px;
-  line-height: 50px;
-  font-size: 30px;
-  font-weight: 200;
-  text-transform: uppercase;
-}
-
-.resume-field {
-  margin-top: 20px;
-  font-weight: 600;
-  word-spacing: 2px;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #fff;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  background: darkgray;
-}
-
-.avatar-responsive {
-  padding-top: 20px;
-}
-
-.starter {
-  font-size: 20px;
-  margin-right: 8px;
-  color: #4b3d62;
-}
-
-.main-ct-portfolio {
-  max-width: 70rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1.5rem;
-  margin-bottom: 80px;
-  background: #f2f2f2;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  height: auto;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.resume-span {
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.resume-position {
-  font-size: 16px;
-  text-transform: capitalize;
-  margin-left: 35px;
-  padding: 5px;
-}
-
-.resume-header {
-  padding: 10px;
-  margin: 25px;
-}
-
-.studentname-resume {
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.resume-desc {
-  font-size: 14px;
-}
-
-.res-item {
-  font-weight: 200;
-}
-
-.res-item-header {
-  display: flex;
-  flex-direction: column;
-}
-
-.resume-container {
-  max-width: 70rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1.5rem;
-  background: #f2f2f2;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  /*background: -o-linear-gradient(left top, #333, #222);
-  background: -moz-linear-gradient(left top, #333, #222);
-  background: linear-gradient(left top, #333, #222);*/
-  height: auto;
-  flex-direction: column;
-}
-
-.student-card {
-  margin-top: 20px;
-  font-weight: 600;
-  word-spacing: 2px;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #fff;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  background: darkgrey;
-}
-
-.student-skills-holder {
-  margin-top: 30px;
-}
-
-.skills-cont {}
-
-.student-skills-holder h1 {
-  font-size: 20px !important;
-  text-transform: uppercase;
-  /*color: #fff;*/
-  text-align: left !important;
-}
-
-.student-skill-card {
-  width: 25%;
-  height: 70px;
-  line-height: 70px;
-  border: 1px solid black;
-  display: inline-block;
-  text-align: center;
-  font-size: 1em;
-  /*color: white;*/
-  font-weight: 500;
-  margin: 5px;
-  border-radius: 45px;
-}
-
-.student-card.nxs {
-  padding: 0.6rem !important;
-  padding: 0.6rem !important;
-  width: 80%;
-  margin: 0 auto;
-  position: relative;
-  top: 20px;
-}
-
-.student-header-container {
-  display: flex;
-  justify-content: flex-start;
-  line-height: 100%;
-}
-
-.student-header-container i {
-  padding-top: 8px;
-  padding-right: 10px;
-}
-
-.student-card.nxs h1 {
-  text-align: left !important;
-}
-
-.student-card.nxs p {
-  font-weight: 900 !important;
-  text-transform: uppercase !important;
-}
-
-.student-header-text {
-  text-transform: uppercase;
-  color: #000;
-  font-size: 20px;
-  text-align: left !important;
-}
-
-.custom-loader {
-  line-height: 80vh;
-  color: darkgrey;
-}
-
-.action-btns {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 40px;
-}
-
-.y-btn {
-  background-color: rgba(255, 255, 255, 1);
-  cursor: pointer !important;
-  height: 50px;
-  width: 230px;
-  transition: color 0.4s ease 0s;
-  display: inline-block;
-  margin: calc(-1 * 0px) 0px 0;
-  position: relative;
-  white-space: nowrap;
-  font-size: 15px;
-  line-height: 50px;
-  text-align: center;
-  font-weight: 800;
-  border: 1px solid black;
-  border-radius: 5px;
-  box-shadow: 10px;
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-}
-
-.y-btn:hover {
-  background-color: #4b3d62;
-  color: #f2f2f2;
-  font-weight: 800;
-}
-
-.portfolio-card {
-  max-width: 70rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 80px;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #f2f2f2;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: auto;
-}
-
-.custom-social {
-  display: flex;
-  justify-content: center;
-}
-
-.student-contact-items {
-  display: flex;
-  flex-direction: column;
-}
-
-.custom-social a {
-  background: #f2f2f2;
-  border-radius: 50%;
-  border: 1px solid;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.custom-social a i {
-  line-height: 35px;
-}
-
-.custom-social a:hover {
-  background: #4b3d62;
-  cursor: pointer;
-}
-
-.student-info-custom {
-  width: 50%;
-}
-
-.student-about-info {}
-
-.custom-email {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.custom-email span {
-  font-size: 20px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.custom-email span:hover {
-  color: #4b3d62;
-}
-
-.student-intro {
-  display: flex;
-  flex-direction: column;
-  /*justify-content: center;
-
-  flex-wrap: wrap;*/
-}
-
-.alter-wrap {
-  padding-bottom: 0 !important;
-}
-
-.student-nav {
-  border-top: 1px solid;
-}
-
-.student-nav #header {
-  display: flex;
-  justify-content: space-around;
-  padding: 0 !important;
-}
-
-.student-icon-card {
-  height: 150px;
-  border: 1px solid;
-  width: 25%;
-  display: flex;
-  justify-content: center;
-}
-
-.student-icon-card img {
-  width: 100% !important;
-}
-
-.blog-card {
-  width: 85%;
-  top: 50%;
-  left: 50%;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 3px 3px 20px rgba(0, 0, 0, .5);
-  padding: 5%;
-}
-
-.project-cont-custom {
-
-}
-
-.project-paginate {
-  margin: 115px;
-}
-
-.project-card {
-  height: 500px;
-  width: 280px;
-  border: 1px solid;
-  margin: 30px;
-}
-
-.project-card-details {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.project-list-custom {
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: center;*/
-}
-
-.spring-fever {
-  background-color: #f2f2f2;
-}
-
-.project-search-input {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding: 7px 12px;
-    position: relative;
-    width: 30%;
-    border: 1px solid rgb(226, 226, 226);
-    outline: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: rgb(102, 102, 102);
-    cursor: initial;
-    font-style: inherit;
-    font-variant: inherit;
-    font-weight: inherit;
-    font-stretch: inherit;
-    font-size: 16px;
-    line-height: inherit;
-    font-family: inherit;
-    height: 100%;
-}
-
-.project-filters-intro {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.project-search-select {
-  width: 30%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 /*About Page*/
-.about-alumni {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid lightgray;
-}
-.about-sticky-contr {
-    position: fixed;
-    width: 15%;
-    height: 80%;
-    /*justify-content: center;*/
-    display: flex;
-    flex-direction: column;
-}
-
-.about-container {
-  width: 80%;
-  margin-left: 10%;
-}
-
-.about-page {
-  display: flex;
-  justify-content: space-between;
-}
-
-.school-map {
-  margin-bottom: 40px;
-  border-bottom: 1px solid lightgray;
-}
-
-.alumni-member {
-  /*margin: 10px;*/
-  width: 200px;
-}
-
-.alumni-img {
-  width: 200px !important;
-  height: 200px !important;
-}
 
 .active {
   border-left-style: solid;
@@ -499,9 +83,6 @@ img.logo {
   background-color: #eee;
 }
 
-.about-schroll {
-  margin-bottom: 10px;
-}
 .empty {
   border-left-style: none;
   background-color: none;
@@ -525,46 +106,6 @@ img.logo {
   .mobileDisplay {
     display: inline-block;
     text-align: center;
-  }
-  /*Student Page*/
-  .student-info-custom {
-    width: 100%;
-  }
-  .y-btn {
-    width: 120px;
-    margin-top: 40px;
-  }
-  .student-skill-card {
-    /*font-size: 0.5em;*/
-  }
-  .project-card-details {
-    font-size: 15px;
-  }
-  .project-paginate {
-    margin: 0;
-  }
-  .project-info-main {
-    flex-wrap: wrap;
-  }
-  .project-img-custom {
-    width: 100% !important;
-    margin-bottom: 30px;
-  }
-  .project-det {
-    width: 100% !important;
-  }
-  .my-3 {
-    font-size: 1.1rem !important;
-  }
-  .about-alumni {
-    flex-wrap: wrap;
-  }
-  .about-sticky-contr {
-    display: none !important;
-  }
-  /*Student Page*/
-  .main-ct-portfolio {
-    max-width: none !important;
   }
 }
 
@@ -1040,35 +581,12 @@ h1.mainHeader {
   text-align: center;
 }
 
-h1.studentName {
-  font-size: 44px;
-  text-transform: uppercase;
-  ;
-  text-align: center;
-}
-
-.studentname-custom {
-  margin-left: 20px !important;
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
-  line-height: 80px;
-  margin-right: 20px !important;
-}
-
 p.mainLink {
   padding: 5px;
   text-align: right;
 }
 
-@media screen and (min-width:280px) and (max-width:1023px) {
-  .studentName {
-    font-size: 7vw !important;
-  }
-}
-
-
 /*Header*/
-
 
 /*Skillset*/
 
@@ -1615,94 +1133,7 @@ p.mainLink {
 
 /*Skillset*/
 
-
 /*Project*/
-
-
-/*New*/
-
-.projectContainer {
-  /*margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 100%;*/
-    max-width: 70rem;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 80px;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #f2f2f2;
-  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: auto;
-}
-
-.project-info-details {
-    font-weight: 600;
-    word-spacing: 2px;
-    border-radius: 8px;
-    padding: 1.1rem;
-    background: #fff;
-    -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-    -moz-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-    box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
-    position: relative;
-    z-index: 2;
-    background: darkgrey;
-    margin-bottom: 30px;
-}
-
-.project-team {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.project-team h2 {
-  display: flex;
-  justify-content: center;
-}
-
-.project-team p {
-  display: flex;
-  justify-content: center;
-}
-
-.project-det {
-   width: 60%;
-
-}
-
-.project-gallery {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.project-info-main {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.project-img-custom {
-  width: 40%;
-  margin-left: 3.5%;
-}
-
-.project-img-custom img {
-    border: 2px solid;
-    width: 350px;
-}
 
 .row {
   display: -ms-flexbox;
@@ -1727,6 +1158,7 @@ small, .small {
   text-transform: capitalize;
 }
 
+/*Might remove
 .my-3 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
@@ -1734,6 +1166,7 @@ small, .small {
   line-height: 1.1;
   font-size: 1.75rem;
 }
+Might remove*/
 
 h3 {
   orphans: 3;
@@ -1743,6 +1176,7 @@ h3 {
 h2, h3 {
   page-break-after: avoid;
 }
+
 
 .w3-container:after, .w3-container:before, .w3-row:after, .w3-row:before, {
   content: "";
@@ -1954,6 +1388,21 @@ p.projHead {
 .card {
   background-color: #fff;
   margin-bottom: 1.6rem;
+  -webkit-box-shadow: 1px 3px 9px rgba(136, 120, 84, 0.6);
+}
+
+@media screen and (min-width: 375px) and (max-width: 421px) {
+  .card {
+    margin: 5%;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 248px) and (max-width: 376px) {
+  .card {
+    margin: auto 5% auto 15%;
+    width: 70%;
+  }
 }
 
 .card__padding {
@@ -2088,62 +1537,6 @@ label {
 
 /*Filter*/
 
-
-/*Student Page*/
-
-.studentButton {
-  color: #000 !important;
-  background-color: #9A549E !important;
-  border-color: #9A549E !important;
-  border-radius: 8px;
-  margin: 0 auto;
-  position: relative;
-  text-align: center;
-  font-weight: bold;
-  padding: 10px;
-}
-
-.floatBottom {
-  position: relative;
-  bottom: 0;
-}
-
-.alignCenter {
-  margin: auto;
-  padding: 2%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-}
-
-.header2 {
-  font-size: 24px;
-}
-
-.indiStudent {
-  margin: auto;
-  text-align: center;
-  padding-left: 30%;
-  padding-right: 30%;
-  padding-bottom: 2%;
-  line-height: 20px;
-}
-
-.indiSkill {
-  margin: auto;
-  text-align: center;
-  padding-bottom: 2%;
-  line-height: 20px;
-  display: table;
-}
-
-
-/*Student Page*/
-
-
 /*Filter Box*/
 
 .contentWrapper {
@@ -2159,6 +1552,7 @@ label {
   padding: 10px;
 }
 
+/*Student and Project List is using it*/
 .w3-cell-content {
   display: table-cell;
   width: 100%;
@@ -2196,8 +1590,11 @@ label {
   .rightAlignArrow {
     visibility: hidden;
   }
+  /*Student and Project List is using it*/
   .w3-cell-content {
     width: 98%;
+    float: none;
+    padding: 0;
   }
   .eachFilter {
     width: 20%;
@@ -2238,22 +1635,23 @@ p.mainLinkFaculty {
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 55px 50px;
-  margin-top: 80px;
+  padding: 0px 55px 55px;
+  margin-top: 50px;
 }
 
 .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
   display: inline-block;
   vertical-align: top;
+  margin-top: inherit;
 }
 
 
 /* Footer left */
 
 .footer-distributed .footer-left {
-  width: 40%;
+  width: 30%;
+  text-align: -webkit-center;
 }
-
 
 /* The company logo */
 
@@ -2294,7 +1692,7 @@ p.mainLinkFaculty {
 /* Footer Center */
 
 .footer-distributed .footer-center {
-  width: 35%;
+  width: 30%;
 }
 
 .footer-distributed .footer-center i {
@@ -2339,7 +1737,7 @@ p.mainLinkFaculty {
 /* Footer Right */
 
 .footer-distributed .footer-right {
-  width: 20%;
+  width: 40%;
 }
 
 .footer-distributed .footer-company-about {
@@ -2395,107 +1793,7 @@ p.mainLinkFaculty {
   }
 }
 
-
-/*Previous Footer*/
-
-
-/*footer {
-	background: #f2f2f2;
-	font-family: 'PT Sans', Arial, sans-serif;
-	color: #000;
-	margin: 0;
-	width: 100%;
-	height:100px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	/*position: fixed;
-	overflow: hidden;
-	bottom: 0;
-}
-footer a {
-	text-decoration: none;
-	color: #000;
-}
-footer .centered {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-}
-footer .centered .footer-logo {
-	width: 20%;
-}
-footer .centered .footer-logo img.logo {
-	padding: 30px 20px 10px 20px;
-	max-width: 100%;
-}
-footer .centered .footer-contact {
-	width: 20%;
-}
-footer .centered .footer-navigation {
-	width: 60%;
-}
-footer .centered .footer-navigation .footer-links-holder {
-	width: 33.33333%;
-	position: relative;
-	float: left;
-	margin: 0;
-}
-footer .centered .footer-navigation .footer-links-holder .footer-links {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	-webkit-transition: max-height .5s;
-	transition: max-height .5s;
-}
-footer .bottom-bar {
-	position: relative;
-	text-align: center;
-	font-size: .8em;
-	text-transform: uppercase;
-	background: #f2f2f2;
-	padding: 15px 0;
-}*/
-
-
-/* Social Icons */
-
-
-/*.social {
-	padding-top: 10px;
-	text-align: center;
-}
-.social a {
-	display: inline-block;
-	padding: 7px;
-	width: 35px;
-	height: 35px;
-	margin: 0 2px;
-	background: #f2f2f2;
-	border-radius: 50%;
-	vertical-align: middle;
-}
-.social a:hover {
-	background: #9A549E;
-}
-.social a.linkedin {
-	padding: 4px;
-}
-.social a svg .face, .social a svg .twit, .social a svg .link {
-	fill: #000;
-}*/
-
-
-/*Previous Footer*/
-
-
 /*Footer*/
-
-@media screen and (min-width: 1210px) {
-  /*Adjust the students and projects to be carousel*/
-  /*Adjust the students and projects to be carousel*/
-}
 
 @media screen and (min-width:768px) {
   /*For home - principle message*/
@@ -2801,7 +2099,8 @@ nav a {
 }
 
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal>.swiper-pagination-bullets {
-  bottom: 50px !important;
+  /*bottom: 50px !important;*/
+  bottom: 20px !important;
   left: 0 !important;
   width: 100% !important;
 }

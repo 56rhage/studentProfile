@@ -45,7 +45,7 @@ export default class ViewProject extends Component{
         initGA();
         logPageView();
 
-        proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        //proxyUrl = 'https://cors-anywhere.herokuapp.com/';
         /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
         var projectID = this.state.projectID;
 
@@ -56,7 +56,7 @@ export default class ViewProject extends Component{
 
       try{
           /*var response = await fetch(proxyUrl + apiURL, options);*/
-          var response = await fetch(proxyUrl + apiURL, options);
+          var response = await fetch(apiURL, options);
 
           // response message
           var data = await response.json();
@@ -89,7 +89,7 @@ export default class ViewProject extends Component{
           }else{
               //Handle other than success
           }
-      } catch (error){
+      }catch(error){
           alert(error);
       }
     }

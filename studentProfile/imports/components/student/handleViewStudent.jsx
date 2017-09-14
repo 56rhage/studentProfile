@@ -123,20 +123,25 @@ export default class handleViewStudent extends Component{
                         {workExp.length > 0 ?
                             <div className="resume-field">
                                 <div className="resume-header">
-                                    <span className="starter">{workExp.length > 0 ? "|" : null }</span>
-                                    <span className="resume-span">{workExp.length > 0 ? "Experience" : null }</span>
+                                    {/*<span className="starter">|</span>*/}
+                                    <span className="resume-span"><img className="normal" src="../img/travel.png" alt="icon" className="resume-hd-img" />Experience</span>
                                 </div>
                                 {workExp.map((item, key) => {
                                     return(
                                         <div className="experience-list">
                                             <div className="res-item">
                                                 <div className="res-item-header">
-                                                    <span className="resume-position">{item.title}  | {item.company}</span>
-                                                    <span className="resume-position">{parseDate(item.start_date)}  - {parseDate(item.end_date)}</span>
+                                                    <span className="resume-company-left">{item.company}</span>
+                                                    <span className="resume-company-right">{parseDate(item.start_date)}  - {parseDate(item.end_date)}</span>
                                                 </div>
-                                                <ul>
-                                                    <li><span className="resume-desc">{item.description}</span></li>
-                                                </ul>
+                                                <div className="res-item-header">
+                                                    <span className="resume-position">{item.title}</span>
+                                                </div>
+                                            </div>
+                                            <div className="res-desc-item">
+                                                <div className="res-desc-header">
+                                                    <span className="resume-desc">{item.description}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     );
@@ -148,20 +153,20 @@ export default class handleViewStudent extends Component{
                         {eduLvl.length > 0 ?
                             <div className="resume-field">
                                 <div className="resume-header">
-                                    <span className="starter">{eduLvl.length > 0 ? "|" : null }</span>
-                                    <span className="resume-span">{eduLvl.length > 0 ? "Education" : null }</span>
+                                    {/*<span className="starter">|</span>*/}
+                                    <span className="resume-span"><img className="normal" src="../img/open-book.png" alt="icon" className="resume-hd-img" />Education</span>
                                 </div>
                                 {eduLvl.map((item, key) => {
-                                    return (
+                                    return(
                                         <div className="experience-list">
                                             <div className="res-item">
                                                 <div className="res-item-header">
-                                                    <span className="resume-position">{item.school}  | {item.education_level}</span>
-                                                    <span className="resume-position">{item.timeperiodfrom}  - {item.timeperiodfrom}</span>
+                                                    <span className="resume-company-left">{item.school}</span>
+                                                    <span className="resume-company-right">{item.timeperiodfrom}  - {item.timeperiodfrom}</span>
                                                 </div>
-                                                <ul>
-                                                    <li><span className="resume-desc">Field of study: {item.field_of_study === null ? "N/A" : "N/A"}</span></li>
-                                                </ul>
+                                                <div className="res-item-header">
+                                                    <span className="resume-position">{item.education_level === "" ? (item.field_of_study === null ? "" : item.field_of_student) : item.education_level }</span>
+                                                </div>
                                             </div>
                                         </div>
                                     );
@@ -173,16 +178,16 @@ export default class handleViewStudent extends Component{
                         {cert.length > 0 ?
                             <div className="resume-field">
                                 <div className="resume-header">
-                                    <span className="starter">{cert.length > 0 ? "|" : null }</span>
-                                    <span className="resume-span">{cert.length > 0 ? "Certifications" : null }</span>
+                                    {/*<span className="starter">|</span>*/}
+                                    <span className="resume-span"><img className="normal" src="../img/diploma.png" alt="icon" className="resume-hd-img" />Certifications</span>
                                 </div>
                                 {cert.map((item, key) => {
                                     return (
                                         <div className="experience-list">
                                             <div className="res-item">
                                                 <div className="res-item-header">
-                                                    <span className="resume-position">{item.certification_name}</span>
-                                                    <span className="resume-position">Start Date: {parseDate(item.start_date)}</span>
+                                                    <span className="resume-company-left">{item.certification_name}</span>
+                                                    <span className="resume-company-right">{parseDate(item.start_date)}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,20 +200,21 @@ export default class handleViewStudent extends Component{
                         {cca.length > 0 ?
                             <div className="resume-field">
                                 <div className="resume-header">
-                                    <span className="starter">{cca.length > 0 ? "|" : null }</span>
-                                    <span className="resume-span">{cca.length > 0 ? "Community Service" : null }</span>
+                                    {/*<span className="starter">|</span>*/}
+                                    <span className="resume-span"><img className="normal" src="../img/donation.png" alt="icon" className="resume-hd-img" />CCA</span>
                                 </div>
                                 {cca.map((item, key) => {
                                     return (
                                         <div className="experience-list">
                                             <div className="res-item">
                                                 <div className="res-item-header">
-                                                    <span className="resume-position">{item.cca}</span>
-                                                    <span className="resume-position">{parseDate(item.start_date)} - {parseDate(item.end_date)}</span>
-                                                    <span className="resume-position">Role: {item.role}</span>
+                                                    <span className="resume-company-left">{item.cca}</span>
+                                                    <span className="resume-company-right">{parseDate(item.start_date)} - {parseDate(item.end_date)}</span>
+                                                </div>
+                                                <div className="res-item-header">
+                                                    <span className="resume-position">{item.role}</span>
                                                 </div>
                                             </div>
-
                                         </div>
                                     );
                                 })
@@ -219,20 +225,18 @@ export default class handleViewStudent extends Component{
                         {achievements.length > 0 ?
                             <div className="resume-field">
                                 <div className="resume-header">
-                                    <span className="starter">{achievements.length > 0 ? "|" : null }</span>
-                                    <span className="resume-span">{achievements.length > 0 ? "Awards": null}</span>
+                                    {/*<span className="starter">|</span>*/}
+                                    <span className="resume-span"><img className="normal" src="../img/title.png" alt="icon" className="resume-hd-img" />Awards</span>
                                 </div>
                                 {achievements.map((item, key) => {
                                     return (
                                         <div className="experience-list">
-
                                             <div className="res-item">
                                                 <div className="res-item-header">
-                                                    <span className="resume-position">{item.award}</span>
-                                                    <span className="resume-position">{parseDate(item.awarding_date)}</span>
+                                                    <span className="resume-company-left">{item.award}</span>
+                                                    <span className="resume-company-right">{parseDate(item.awarding_date)}</span>
                                                 </div>
                                             </div>
-
                                         </div>
                                     );
                                 })
@@ -362,44 +366,10 @@ export default class handleViewStudent extends Component{
         )
     }
 
-
   render(){
-
-    var imageStyle = {
-        width: '100%',
-    }
-
-    var iconPadding = {
-        paddingRight: '5px',
-        paddingLeft: '5px',
-    }
-
-    var tableCenter = {
-        margin: '0px auto',
-    }
-
-    var tableWidth = {
-        width: '50%',
-        padding: '10px',
-    }
-
-    var tableWidthImg = {
-        width: '30%',
-        padding: '10px',
-    }
-
-    var subText = {
-        fontWeight: '300',
-    }
-
-    var icon = {
-        width: '62px',
-        float: 'center',
-    }
-
     return (
         <div>
-            <NavigationApp />
+            <NavigationApp display={false}/>
             <br/>
             {this.renderStudentProfile()}
 
@@ -407,25 +377,6 @@ export default class handleViewStudent extends Component{
 
             {this.props.projects.length > 0 &&
                 <div className="main-ct-portfolio">
-                    {this.state.counterPortfolio ?
-                        <div>
-                            <hr/>
-                            <table style={ tableCenter }>
-                                <tr>
-                                    <td style={ tableWidthImg }>
-                                        <img className="normal" src="./../img/briefcase.png" style={ icon }/>
-                                    </td>
-                                    <td style={ tableWidth }>
-                                        <h1>Portfolio</h1>
-                                        <h3 style={ subText }>Some of My Works</h3>
-                                    </td>
-                                </tr>
-                            </table>
-                            <hr/>
-                        </div>
-                    : "" }
-
-
                     <div id="wrap">
                         <div id="header">
                             {/*<h1 className="mainHeader">Projects</h1>*/}
@@ -447,7 +398,6 @@ export default class handleViewStudent extends Component{
                             <div className="clearfix"></div>
                         </div>
                     </div>
-
                 </div>
             }
             <br />

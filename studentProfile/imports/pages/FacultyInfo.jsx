@@ -93,7 +93,7 @@ export default class FacultyInfo extends Component{
 
     return (
       <div>
-          <NavigationApp />
+          <NavigationApp display={false}/>
           <br/>
 
           <header id="header">

@@ -65,12 +65,14 @@ export default class studentCarousel extends Component{
          alignItems: 'center',
          justifyContent: 'center',
         }
-        
+
       if (allStudents.length > 0) {
           return (
             <Swiper {...params}>
                 {this.props.allStudents.map((studentProject, index) => {
                     var studentURL = "/ViewStudent/" + studentProject.student_id;
+                    console.log(studentProject.project_role);
+                    var text = (typeof studentProject.student_desc != "undefined") ? studentProject.student_desc : studentProject.project_role;
 
                     return(
                         <div className="wrapper" key={index}>
@@ -88,7 +90,7 @@ export default class studentCarousel extends Component{
                                         <h2><a href={studentURL}>{ studentProject.student_name }</a></h2>
 
                                         <LinesEllipsis
-                                            text={ trimText(studentProject.student_desc) }
+                                            text={ trimText(text) }
                                             maxLine='3'
                                             ellipsis=''
                                             trimRight
@@ -107,6 +109,7 @@ export default class studentCarousel extends Component{
                 {this.state.count < 2 &&
                     this.props.allStudents.map((studentProject, index) => {
                         var studentURL = "/ViewStudent/" + studentProject.student_id;
+                        var text = (typeof studentProject.student_desc != "undefined") ? studentProject.student_desc : studentProject.project_role;
 
                         return(
                             <div className="wrapper" key={index}>
@@ -125,7 +128,7 @@ export default class studentCarousel extends Component{
                                                 <h2><a href="#">{ studentProject.student_name }</a></h2>
 
                                                 <LinesEllipsis
-                                                    text={trimText(studentProject.student_desc)}
+                                                    text={trimText(text)}
                                                     maxLine='3'
                                                     ellipsis=''
                                                     trimRight
@@ -148,11 +151,15 @@ export default class studentCarousel extends Component{
   render(){
 
 
-    const { allStudents } = this.props;
+    const { allStudents, header } = this.props;
 
     return (
         <div>
+            {header ?
+                header
+            :
             <h1 className="mainHeader">Featured Students</h1>
+            }
             {this.renderProjectSwiper(allStudents)}
             <div className="clearfix"></div>
         </div>

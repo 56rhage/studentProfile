@@ -6,8 +6,8 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import NavigationApp from '../components/NavigationApp.jsx';
-import Filter from '../components/student/Filter.jsx';
 import ListOfStudents from '../components/student/ListOfStudents.jsx';
+import Pagination from '../components/Pagination.jsx';
 import Footer from '../components/Footer.jsx';
 
 /*Analytics*/
@@ -29,59 +29,34 @@ export default class AllStudents extends Component{
       super(props);
 
       this.state = {
-          allStudents: [],
           search: '',
+          listOfStudent: [],
       };
     }
 
-    async componentDidMount(){
+    componentDidMount(){
         initGA();
         logPageView();
-
-        proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-        /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
-        apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetStudentDisplay';
-        options = {
-            method: 'GET',
-        };
-
-      try{
-          /*var response = await fetch(proxyUrl + apiURL, options);*/
-          var response = await fetch(proxyUrl + apiURL, options);
-
-          // response message
-          var data = await response.json();
-
-          var status = response.status;
-
-          if (status == 200){
-          // response code
-          var allStudents = data.student_display_info;
-          console.log(allStudents);
-
-          this.setState({
-            allStudents: allStudents,
-          });
-          }else{
-              //Handle other than success
-          }
-      }catch(error){
-          alert(error);
-      }
     }
 
     /*Method for search to call*/
     onSearchChange(value){
-        console.log("Entered All Students");
         this.setState({
-            search: value,
+            search: value.target.value,
         });
     }
+
+    /*Method for pagination to call
+    onPaginationChange(value){
+        this.setState({
+            listOfStudent: value.target.value,
+        });
+    }*/
 
     render() {
         return (
           <div>
-              <NavigationApp allList={this.state.allStudents} />
+              <NavigationApp onSearchChange={this.onSearchChange.bind(this)}  display={true}/>
               <br/>
               <div className="contentWrapper">
                   {/*<Filter />
@@ -89,6 +64,8 @@ export default class AllStudents extends Component{
                   <ListOfStudents search={this.state.search}/>
               </div>
               <br />
+              {/*<Pagination />
+              <br/>*/}
               <Footer />
           </div>
         );

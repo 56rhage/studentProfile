@@ -58,7 +58,7 @@ export default class ViewStudent extends Component{
 
     async componentWillMount(){
         if (this.state.currentState !== 'isLoading') {
-                proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+                //proxyUrl = 'https://cors-anywhere.herokuapp.com/';
                 /*apiURL = 'http://54.191.109.239/FYPXpal/GetStudentInfo';*/
                 var studentID = this.state.studentID;
                 apiURL = 'http://54.191.109.239/xPalBackend_FYPXpal/GetStudentData?student_id=' + studentID;
@@ -68,11 +68,12 @@ export default class ViewStudent extends Component{
 
             try{
                 /*var response = await fetch(proxyUrl + apiURL, options);*/
-                var response = await fetch(proxyUrl + apiURL, options);
+                var response = await fetch(apiURL, options);
 
                 // response message
                 var data = await response.json();
                 console.log(data);
+
                 var status = response.status;
 
                 if (status == 200){
@@ -115,7 +116,7 @@ export default class ViewStudent extends Component{
                     achievements: achievements,
                     currentState: 'Loaded'
                 });
-                
+
                 }else{
                     //Handle other than success
                 }
@@ -138,7 +139,7 @@ export default class ViewStudent extends Component{
                 courseName={this.state.courseName}
                 email={this.state.email}
                 photo={this.state.photo}
-                linkedin={this.state.personalProfile}
+                linkedin={this.state.linkedin}
                 personalProfile={this.state.personalProfile}
                 twitter={this.state.twitter}
                 git={this.state.git}

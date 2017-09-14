@@ -148,9 +148,9 @@ export default class projectCarousel extends Component{
     return (
         <div>
             {header ?
-                header 
-                :
-                <h1 className="mainHeader">Featured Projects</h1>
+                header
+            :
+            <h1 className="mainHeader">Featured Projects</h1>
             }
             {this.renderProjectSwiper(allProjects)}
             <div className="clearfix"></div>
